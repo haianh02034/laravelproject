@@ -12,8 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('seats', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('auditorium_id');
+            $table->increments('id');
+            
+            $table->integer('auditorium_id')->unsigned();
+            
             $table->string('seat_number');
             $table->timestamps();
 

@@ -12,9 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('showtimes', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('movie_id');
-            $table->unsignedBigInteger('auditorium_id');
+            $table->increments('id');
+           
+            $table->integer('movie_id')->unsigned();
+           
+            $table->integer('auditorium_id')->unsigned();
             $table->dateTime('start_time');
             $table->timestamps();
 

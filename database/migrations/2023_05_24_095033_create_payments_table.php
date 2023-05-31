@@ -12,8 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('payments', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('booking_id');
+            $table->increments('id');
+            
+            $table->integer('booking_id')->unsigned();
             $table->decimal('amount', 10, 2);
             $table->dateTime('payment_date');
             $table->string('payment_method');

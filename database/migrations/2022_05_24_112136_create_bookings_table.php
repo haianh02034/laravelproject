@@ -12,12 +12,17 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('bookings', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('movie_id');
-            $table->unsignedBigInteger('auditorium_id');
-            $table->unsignedBigInteger('theater_id');
-            $table->unsignedBigInteger('showtime_id');
+            $table->increments('id');
+            
+            $table->integer('user_id')->unsigned();
+           
+            $table->integer('movie_id')->unsigned();
+       
+            $table->integer('auditorium_id')->unsigned();
+      
+            $table->integer('theater_id')->unsigned();
+     
+            $table->integer('showtime_id')->unsigned();
             $table->dateTime('booking_date');
             $table->timestamps();
 
