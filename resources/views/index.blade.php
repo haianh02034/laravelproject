@@ -16,6 +16,9 @@
 </head>
 
 <body>
+	<div>
+		<p>Login success</p>
+	</div>
 
 	<!-- header -->
 	<header id="site-header" class="w3l-header fixed-top">

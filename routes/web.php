@@ -25,3 +25,9 @@ Route::get('/sign_in.html', function () {
 Route::get('/index.html', function () {
     return view('index');
 });
+
+Route::get('/index', [HomeController::class, 'index']);
+Route::get('/login', [LoginController::class, 'login']);
+Route::get('/auth/google' [LoginController::class, 'redirectToGoogle']);
+Route::get('/auth/google/callback', [LoginController::class, 'handleGoogleCallback']);
+
