@@ -18,6 +18,11 @@ return new class extends Migration
             $table->string('password');
             $table->string('avatar');
             $table->timestamps();
+
+            $table->string('provider_name')->nullable()->after('provider_name');
+            $table->string('provider_id')->nullable()->after('id');
+            $table->string('password')->nullable()->change();
+            $table->string('avatar')->nullable();
         });
     }
 
