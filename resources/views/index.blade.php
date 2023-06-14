@@ -16,9 +16,12 @@
 </head>
 
 <body>
+<<<<<<< HEAD
 	<div>
 		<p>Login success</p>
 	</div>
+=======
+>>>>>>> 5c43018 (font end)
 
 	<!-- header -->
 	<header id="site-header" class="w3l-header fixed-top">
