@@ -5,5 +5,5 @@
 </style>
 
 <div class="text-center">
-    <a href=""
+    <a href="">
 </div>

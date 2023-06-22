@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
+        <base href="{{asset('')}}">
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -33,16 +34,16 @@
         <meta property="og:site_name" content="Creative Tim" />
         <title>{{ config('app.name', 'Black Dashboard Laravel - Free Laravel Preset') }}</title>
         <!-- Favicon -->
-        <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('black') }}/img/apple-icon.png">
-        <link rel="icon" type="image/png" href="{{ asset('black') }}/img/favicon.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('img/apple-icon.png') }}">
+        <link rel="icon" type="image/png" href="{{ asset('img/favicon.png') }}">
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
         <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
         <!-- Icons -->
-        <link href="{{ asset('black') }}/css/nucleo-icons.css" rel="stylesheet" />
+        <link href="{{ asset('assets/css/admin/nucleo-icons.css') }}" rel="stylesheet" />
         <!-- CSS -->
-        <link href="{{ asset('black') }}/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
-        <link href="{{ asset('black') }}/css/theme.css" rel="stylesheet" />
+        <link href="{{ asset('assets/css/admin/black-dashboard.css?v=1.0.0') }}" rel="stylesheet" />
+        <link href="{{ asset('assets/css/admin/theme.css') }}" rel="stylesheet" />
         <!-- Google Tag Manager -->
         <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -65,7 +66,7 @@
                                     </div>
                                     <ul class="nav">
                                         <li>
-                                            <a href="{{ route('home') }}">
+                                            <a href="">
                                                 <i class="tim-icons icon-chart-pie-36"></i>
                                                 <p>{{ _('Dashboard') }}</p>
                                             </a>
@@ -80,13 +81,13 @@
                                             <div class="collapse show" id="laravel-examples">
                                                 <ul class="nav pl-4">
                                                     <li >
-                                                        <a href="{{ route('profile.edit')  }}">
+                                                        <a href="{{ asset('admin/profile/edit')  }}">
                                                             <i class="tim-icons icon-single-02"></i>
                                                             <p>{{ _('User Profile') }}</p>
                                                         </a>
                                                     </li>
                                                     <li class="active">
-                                                        <a href="{{ route('user.index')  }}">
+                                                        <a href="{{ asset('admin/user/index')  }}">
                                                             <i class="tim-icons icon-bullet-list-67"></i>
                                                             <p>{{ _('User Management') }}</p>
                                                         </a>
@@ -95,43 +96,43 @@
                                             </div>
                                         </li>
                                         <li >
-                                            <a href="{{ route('pages.icons') }}">
+                                            <a href="{{ asset('/admin/pages/icons') }}">
                                                 <i class="tim-icons icon-atom"></i>
                                                 <p>{{ _('Icons') }}</p>
                                             </a>
                                         </li>
                                         <li >
-                                            <a href="{{ route('pages.maps') }}">
+                                            <a href="{{ asset('/admin/pages/maps') }}">
                                                 <i class="tim-icons icon-pin"></i>
                                                 <p>{{ _('Maps') }}</p>
                                             </a>
                                         </li>
                                         <li >
-                                            <a href="{{ route('pages.notifications') }}">
+                                            <a href="{{ asset('/admin/pages/notifications') }}">
                                                 <i class="tim-icons icon-bell-55"></i>
                                                 <p>{{ _('Notifications') }}</p>
                                             </a>
                                         </li>
                                         <li >
-                                            <a href="{{ route('pages.tables') }}">
+                                            <a href="{{ asset('/admin/pages/tables') }}">
                                                 <i class="tim-icons icon-puzzle-10"></i>
                                                 <p>{{ _('Table List') }}</p>
                                             </a>
                                         </li>
                                         <li >
-                                            <a href="{{ route('pages.typography') }}">
+                                            <a href="{{ asset('/admin/pages/typography') }}">
                                                 <i class="tim-icons icon-align-center"></i>
                                                 <p>{{ _('Typography') }}</p>
                                             </a>
                                         </li>
                                         <li >
-                                            <a href="{{ route('pages.rtl') }}">
+                                            <a href="{{ asset('/admin/pages/rtl') }}">
                                                 <i class="tim-icons icon-world"></i>
                                                 <p>{{ _('RTL Support') }}</p>
                                             </a>
                                         </li>
-                                        <li class=" {{ $pageSlug == 'upgrade' ? 'active' : '' }} bg-info">
-                                            <a href="{{ route('pages.upgrade') }}">
+                                        <li class="">
+                                            <a href="{{ asset('/admin/pages/upgrade') }}">
                                                 <i class="tim-icons icon-spaceship"></i>
                                                 <p>{{ _('Upgrade to PRO') }}</p>
                                             </a>
@@ -192,21 +193,21 @@
                                         <li class="dropdown nav-item">
                                             <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                                                 <div class="photo">
-                                                    <img src="{{ asset('black') }}/img/anime3.png" alt="{{ __('Profile Photo') }}">
+                                                    <img src="{{ asset('assets/images/admin/anime3.png') }}" alt="{{ __('Profile Photo') }}">
                                                 </div>
                                                 <b class="caret d-none d-lg-block d-xl-block"></b>
                                                 <p class="d-lg-none">{{ __('Log out') }}</p>
                                             </a>
                                             <ul class="dropdown-menu dropdown-navbar">
                                                 <li class="nav-link">
-                                                    <a href="{{ route('profile.edit') }}" class="nav-item dropdown-item">{{ __('Profile') }}</a>
+                                                    <a href="{{ asset('profile.edit') }}" class="nav-item dropdown-item">{{ __('Profile') }}</a>
                                                 </li>
                                                 <li class="nav-link">
                                                     <a href="#" class="nav-item dropdown-item">{{ __('Settings') }}</a>
                                                 </li>
                                                 <li class="dropdown-divider"></li>
                                                 <li class="nav-link">
-                                                    <a href="{{ route('logout') }}" class="nav-item dropdown-item" onclick="event.preventDefault();  document.getElementById('logout-form').submit();">{{ __('Log out') }}</a>
+                                                    <a href="{{ asset('logout') }}" class="nav-item dropdown-item" onclick="event.preventDefault();  document.getElementById('logout-form').submit();">{{ __('Log out') }}</a>
                                                 </li>
                                             </ul>
                                         </li>
@@ -267,24 +268,29 @@
                             <th scope="col"></th>
                         </tr></thead>
                         <tbody>
-                                                                <tr>
-                                    <td>Admin Admin</td>
-                                    <td>
-                                        <a href="mailto:admin@black.com">admin@black.com</a>
-                                    </td>
-                                    <td>24/02/2020 16:47</td>
-                                    <td class="text-right">
-                                            <div class="dropdown">
-                                                <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    <i class="fas fa-ellipsis-v"></i>
-                                                </a>
-                                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                                                                                                <a class="dropdown-item" href="#">Edit</a>
-                                                                                                        </div>
-                                            </div>
-                                    </td>
-                                </tr>
-                                                        </tbody>
+                            @foreach($users as $key => $user)
+                            <tr>
+                                <td>{{ $users->name }}</td>
+                                <td>{{ $users->email }}</td>
+
+                                <td>Admin Admin</td>
+                                <td>
+                                    <a href="mailto:admin@black.com">admin@black.com</a>
+                                </td>
+                                <td>24/02/2020 16:47</td>
+                                <td class="text-right">
+                                    <div class="dropdown">
+                                        <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                                            <a class="dropdown-item" href="#">Edit</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
                     </table>
                 </div>
             </div>
@@ -335,7 +341,7 @@
 </footer>
             </div>
         </div>
-        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+        <form id="logout-form" action="{{ asset('logout') }}" method="POST" style="display: none;">
             <input type="hidden" name="_token" value="ub2DzAIrgUnghVvu3l3KAbbq0UztNO8yfkrDNm6n">            </form>
             <div class="fixed-plugin">
         <div class="dropdown show-dropdown">

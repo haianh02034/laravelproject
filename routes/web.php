@@ -18,24 +18,19 @@ Route::get('/sign_in.html', function () {
     return view('sign_in');
 });
 
-<<<<<<< HEAD
 
 Route::get('/sign_in.html', function () {
     return view('sign_in');
 });
 
-=======
->>>>>>> 5c43018 (font end)
 Route::get('/index.html', function () {
     return view('index');
 });
 
-<<<<<<< HEAD
-Route::get('/index', [HomeController::class, 'index']);
+//Route::get('/index', [HomeController::class, 'index']);
 Route::get('/login', [LoginController::class, 'login']);
 Route::get('/auth/google', [LoginController::class, 'redirectToGoogle']);
 Route::get('/auth/google/callback', [LoginController::class, 'handleGoogleCallback']);
-=======
 
 Route::get('/movies.html', function () {
     return view('movies');
@@ -62,9 +57,27 @@ Route::get('/e-ticket.html', function () {
     return view('e-ticket');
 });
 
-Route::get('/e-ticket.html', function () {
-    return view('admin/alerts/');
+Route::get('/admin/dashboard', function () {
+    return view('admin.dashboard');
 });
 
->>>>>>> 5c43018 (font end)
+Route::get('/admin/users/index', function () {
+    return view('admin.users.index');
+});
+
+Route::get('/admin/profile/edit', function () {
+    return view('admin.profile.edit');
+});
+
+Route::get('/admin_nhom5/dashboard', function () {
+    return view('admin_nhom5.dashboard');
+});
+
+Route::get('/admin-users', function () {
+    return view('admin_nhom5.users');
+});
+
+
+
+
 

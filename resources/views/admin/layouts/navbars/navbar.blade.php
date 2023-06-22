@@ -1,7 +1,7 @@
 @auth()
-    @include('layouts.navbars.navs.auth')
+    @include('admin.layouts.navbars.navs.auth')
 @endauth
 
 @guest()
-    @include('layouts.navbars.navs.guest')
+    @include('admin.layouts.navbars.navs.guest')
 @endguest

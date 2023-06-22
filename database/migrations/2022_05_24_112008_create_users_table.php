@@ -15,11 +15,11 @@ return new class extends Migration
             $table->string('provider_name')->nullable()->after('provider_name');
             $table->string('provider_id')->nullable()->after('id');
 
-            $table->increments('id');
+            //$table->increments('id');
             $table->string('name');
             $table->string('email')->unique();
-            $table->string('password');
-            $table->string('avatar');
+            $table->string('password')->nullable()->change();
+            $table->string('avatar')->nullable();
             $table->timestamps();
 
             
@@ -31,6 +31,12 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::table('users', function (Blueprint $table) {
+            //
+        });
     }
+    //public function down(): void
+    //{
+    //    Schema::dropIfExists('users');
+    //}
 };
