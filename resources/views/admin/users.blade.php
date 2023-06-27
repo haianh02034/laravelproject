@@ -289,7 +289,7 @@
                             <th>Phone</th>
                             <th>Address</th>
                             <th>Role</th>
-                           <th>Password</th>
+                            <th>Password</th>
                             <th>Date created</th>
                             <th>Action</th>
                         </tr>

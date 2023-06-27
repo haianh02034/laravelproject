@@ -248,8 +248,8 @@
                                                       class="rounded profile-img img-fluid avatar-70">
                                               </div>
                                               <div class="p-3">
-                                                  <h5 class="mb-1"> {{ Auth::user()->full_name }}</h5>
-                                                  <p class="mb-0"> {{ Auth::user()->email }}</p>
+                                                  <h5 class="mb-1">  Auth::user()->full_name </h5>
+                                                  <p class="mb-0">  Auth::user()->email </p>
                                                   <div class="d-flex align-items-center justify-content-center mt-3">
                                                       <a href="" class="btn border mr-2">Profile</a>
                                                       <a  href="{{asset('logout')}}" class="btn border">Sign Out</a>
@@ -274,11 +274,11 @@
                     <div class="card-header d-flex justify-content-between">
                         <div class="header-title">
                             <h4 class="card-title">Add Users</h4>                          
-                <p>@include('errors.note')</p>
+                <p>include('errors.note')</p>
                         </div>
                     </div>
                     <div class="card-body">
-                    <form action="{{ route('useradd') }}" method="POST" data-toggle="validator">
+                    <form action=" route('useradd') " method="POST" data-toggle="validator">
                         @csrf
                         <div class="row"> 
                             <div class="col-md-12">                      

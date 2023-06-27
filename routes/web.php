@@ -14,9 +14,6 @@ use App\Http\Controllers\LoginController;
 |
 */
 
-Route::get('/sign_in.html', function () {
-    return view('sign_in');
-});
 
 
 Route::get('/sign_in.html', function () {
@@ -57,25 +54,21 @@ Route::get('/e-ticket.html', function () {
     return view('e-ticket');
 });
 
+
+
 Route::get('/admin/dashboard', function () {
     return view('admin.dashboard');
 });
 
-Route::get('/admin/users/index', function () {
-    return view('admin.users.index');
+Route::get('/admin/users', function () {
+    return view('admin.users');
 });
 
-Route::get('/admin/profile/edit', function () {
-    return view('admin.profile.edit');
+Route::get('/admin/useradd', function () {
+    return view('admin.useradd');
 });
 
-Route::get('/admin_nhom5/dashboard', function () {
-    return view('admin_nhom5.dashboard');
-});
 
-Route::get('/admin-users', function () {
-    return view('admin_nhom5.users');
-});
 
 
 
