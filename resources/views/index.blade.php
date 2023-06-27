@@ -16,9 +16,6 @@
 </head>
 
 <body>
-	<div>
-		<p>Login success</p>
-	</div>
 
 	<!-- header -->
 	<header id="site-header" class="w3l-header fixed-top">
@@ -53,9 +50,46 @@
 						</li>
 
 
-						<li class="nav-item">
+						{{-- <li class="nav-item">
 							<a class="nav-link" href="Contact_Us.html">Contact</a>
+						</li> --}}
+						<li class="nav-item">
+							@if (Auth::check())
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+										{{ Auth::user()->name }}
+										<span class="caret"></span>
+									</a>
+									<ul class="dropdown-menu">
+										<li><a href="#">Account information</a></li>
+										<li><a href="{{ asset('logout') }}">Logout</a></li>
+									</ul>
+								</li>
+							@else
+								<li><a class="nav-link" href="sign_in.html"><i class="fa fa-user-circle-o"></i></a></li>
+							@endif
 						</li>
+						
+
+
+
+
+						{{-- @if (Auth::check())
+						<li class="dropdown" list-style-type: none;>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								{{ Auth::user()->full_name }}
+								<span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Thông tin tài khoản</a></li>
+								<li><a href="{{asset('logout')}}">Logout</a></li>
+							</ul>
+						</li>
+					@else
+						<li><a class="nav-link" href="sign_in.html"><i class="fa fa-user-circle-o"></i></a></li>
+					@endif --}}
+
+
 					</ul>
 
 					<!--/search-right-->
@@ -103,7 +137,11 @@
 					<div class="Login_SignUp" id="login"
 						style="font-size: 2rem ; display: inline-block; position: relative;">
 						<!-- <li class="nav-item"> -->
-						<a class="nav-link" href="sign_in.html"><i class="fa fa-user-circle-o"></i></a>
+
+						
+						{{-- ????? --}}
+
+
 						<!-- </li> -->
 					</div>
 				</div>
@@ -353,8 +391,8 @@
 						<div class="button-center text-center mt-4">
 							<a href="movies.html" class="btn watch-button">Watch now</a>
 						</div>
-
 					</div>
+
 					<div class="item vhny-grid">
 						<div class="box16 mb-0">
 							<a href="movies.html">
@@ -379,6 +417,7 @@
 							<a href="movies.html" class="btn watch-button">Watch now</a>
 						</div>
 					</div>
+
 					<div class="item vhny-grid">
 						<div class="box16 mb-0">
 							<a href="movies.html">
@@ -403,6 +442,7 @@
 							<a href="movies.html" class="btn watch-button">Watch now</a>
 						</div>
 					</div>
+
 					<div class="item vhny-grid">
 						<div class="box16 mb-0">
 							<a href="movies.html">
@@ -426,8 +466,8 @@
 						<div class="button-center text-center mt-4">
 							<a href="movies.html" class="btn watch-button">Watch now</a>
 						</div>
-
 					</div>
+					
 					<div class="item vhny-grid">
 						<div class="box16 mb-0">
 							<a href="movies.html">
