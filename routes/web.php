@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\LoginController;
-
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,19 +18,14 @@ Route::get('/sign_in.html', function () {
     return view('sign_in');
 });
 
-
-Route::get('/sign_in.html', function () {
-    return view('sign_in');
+Route::get('/register.html', function () {
+    return view('register');
 });
 
 Route::get('/index.html', function () {
     return view('index');
 });
 
-//Route::get('/index', [HomeController::class, 'index']);
-Route::get('/login', [LoginController::class, 'login']);
-Route::get('/auth/google', [LoginController::class, 'redirectToGoogle']);
-Route::get('/auth/google/callback', [LoginController::class, 'handleGoogleCallback']);
 
 Route::get('/movies.html', function () {
     return view('movies');
@@ -57,27 +52,27 @@ Route::get('/e-ticket.html', function () {
     return view('e-ticket');
 });
 
-Route::get('/admin/dashboard', function () {
-    return view('admin.dashboard');
-});
+// Route::get('/e-ticket.html', function () {
+//     return view('admin/alerts/');
+// });
 
-Route::get('/admin/users/index', function () {
-    return view('admin.users.index');
-});
-
-Route::get('/admin/profile/edit', function () {
-    return view('admin.profile.edit');
-});
-
-Route::get('/admin_nhom5/dashboard', function () {
-    return view('admin_nhom5.dashboard');
-});
-
-Route::get('/admin-users', function () {
-    return view('admin_nhom5.users');
+Route::get('/admin', function () {
+    return view('admin/users/index');
 });
 
 
 
 
+    Route::get('/sign_in.html', [AuthController::class, 'getLogin'])->name('login');
+     Route::post('/sign_in.html', [AuthController::class, 'postLogin']); 
+     Route::get('/register.html', [AuthController::class, 'getRegister'])->name('register');
+     Route::post('/register.html', [AuthController::class, 'postRegister']); 
 
+    Route::get('logout', [AuthController::class, 'getLogout'
+]);
+
+
+
+Route::get('/login', [AuthController::class, 'login']);
+Route::get('/auth/google', [AuthController::class, 'redirectToGoogle']);
+Route::get('/auth/google/callback', [AuthController::class, 'handleGoogleCallback']);

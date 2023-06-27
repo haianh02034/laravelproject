@@ -19687,3 +19687,31 @@ button.closebtn {
   }
 }
 /* Loading ends */
+.nav-item {
+	list-style-type: none;
+}
+
+/* .dropdown-toggle {
+	text-decoration: none;
+} */
+
+.dropdown-menu {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	/* min-width: 160px; */
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  margin:auto
+}
+
+.dropdown-menu li {
+	padding: 10px;
+}
+
+.dropdown:hover .dropdown-menu {
+	display: block;
+}
+
+.fa-user-circle-o {
+	margin-right: 5px;
+}
