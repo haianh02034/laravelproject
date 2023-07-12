@@ -5,9 +5,12 @@ use Illuminate\Http\Reques;
 use App\Http\Middleware\CheckAge;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
+<<<<<<< Updated upstream
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MovieController;
 
+=======
+>>>>>>> Stashed changes
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +31,7 @@ Route::get('/register', function () {
 Route::get('/index', function () {
     return view('index');
 });
+Route::get('/index.html', [HomeController::class, 'index'])->name('index');
 
 
 Route::get('/movies', function () {
@@ -47,6 +51,7 @@ Route::get('/ticket-booking', function () {
     return view('ticket-booking');
 });
 
+<<<<<<< Updated upstream
 Route::get('/seat_sel', function () {
     return view('seat_sel');
 });
@@ -54,12 +59,22 @@ Route::get('/seat_sel', function () {
 Route::get('/e-ticket', function () {
     return view('e-ticket');
 });
+=======
+Route::get('/display_selection.html', function () {
+    return view('display_selection');
+});
+
+// Route::get('/e-ticket.html', function () {
+//     return view('e-ticket');
+// });
+>>>>>>> Stashed changes
 
 
 
 Route::get('/admin/dashboard', function () {
     return view('admin.dashboard');
 });
+<<<<<<< Updated upstream
 
 Route::get('/admin/users', function () {
     return view('admin.users');
@@ -114,6 +129,8 @@ Route::get('/admin/master', function () {
 
 
 
+=======
+>>>>>>> Stashed changes
     Route::get('/sign_in.html', [AuthController::class, 'getLogin'])->name('login');
      Route::post('/sign_in.html', [AuthController::class, 'postLogin']); 
      Route::get('/register.html', [AuthController::class, 'getRegister'])->name('register');
@@ -129,3 +146,8 @@ Route::get('/admin/master', function () {
 Route::get('/login', [AuthController::class, 'login']);
 Route::get('/auth/google', [AuthController::class, 'redirectToGoogle']);
 Route::get('/auth/google/callback', [AuthController::class, 'handleGoogleCallback']);
+
+// Route hiển thị và cập nhật thông tin cá nhân
+Route::get('/profile', [AuthController::class, 'showProfile'])->name('profile');
+Route::post('/profile/update', [AuthController::class, 'updateProfile'])->name('profile.update');
+

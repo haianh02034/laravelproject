@@ -13,14 +13,14 @@ return new class extends Migration
     {
         Schema::create('auditoriums', function (Blueprint $table) {
             $table->increments('id');
-            
             $table->integer('theater_id')->unsigned();
             $table->string('name');
             $table->integer('capacity');
             $table->timestamps();
-
+        
             $table->foreign('theater_id')->references('id')->on('theaters');
         });
+        
     }
 
     /**

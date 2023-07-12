@@ -13,16 +13,16 @@ return new class extends Migration
     {
         Schema::create('movies', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title');
+            $table->string('title')->nullable();
             $table->string('category');
-            $table->string('director');
-            $table->string('performer');
-            $table->string('producer');
-            $table->string('release_year');
-            $table->string('National_production');
-            $table->string('time');
-            $table->string('movie_photo');
-            $table->integer('language');
+            $table->string('director')->nullable();
+            $table->string('performer')->nullable();
+            $table->string('producer')->nullable();
+            $table->string('release_year')->nullable();
+            $table->string('National_production')->nullable();
+            $table->string('time')->nullable();
+            $table->string('movie_photo')->nullable();
+            $table->string('language')->nullable();
             $table->timestamps();
         });
     }
