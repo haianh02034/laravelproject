@@ -27,7 +27,7 @@
       
       <div class="iq-sidebar  sidebar-default ">
           <div class="iq-sidebar-logo d-flex align-items-center justify-content-between">
-              <a  href="{{ url('admin-dashboard') }}" class="header-logo">
+              <a  href="{{ url('admin/dashboard') }}" class="header-logo">
                   <img  src="images/favicon.png"  alt="Favicon"  class="img-fluid rounded-normal light-logo" alt="logo"><h5 class="logo-title light-logo ml-3">Cinema A</h5>
               </a>
               <div class="iq-menu-bt-sidebar ml-0">
@@ -80,12 +80,12 @@
                           </a>
                           <ul id="product" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                               <li class="">
-                                  <a href="{{ url('admin-orders') }}">
+                                  <a href="{{ url('admin/orders') }}">
                                       <i class="las la-minus"></i><span>List Order</span>
                                   </a>
                               </li>
                               <li class="">
-                                  <a href="{{ url('admin-order-add') }}">
+                                  <a href="{{ url('admin/orderadd') }}">
                                       <i class="las la-minus"></i><span>Add Order</span>
                                   </a>
                               </li>
@@ -96,20 +96,20 @@
                               <svg class="svg-icon" id="p-dash3" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                                   <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
                               </svg>
-                              <span class="ml-4">Rooms</span>
+                              <span class="ml-4">Movies</span>
                               <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                   <polyline points="10 15 15 20 20 15"></polyline><path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
                               </svg>
                           </a>
                           <ul id="category" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                                   <li class="">
-                                          <a href="">
-                                              <i class="las la-minus"></i><span>List Rooms</span>
+                                          <a href="{{ url('admin/movies') }}">
+                                              <i class="las la-minus"></i><span>List Movies</span>
                                           </a>
                                   </li>
                                   <li class="">
-                                          <a href="">
-                                              <i class="las la-minus"></i><span>Add Room</span>
+                                          <a href="{{ url('admin/movieadd') }}">
+                                              <i class="las la-minus"></i><span>Add Movie</span>
                                           </a>
                                   </li>
                           </ul>
@@ -119,7 +119,7 @@
                               <svg class="svg-icon" id="p-dash4" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                   <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path>
                               </svg>
-                              <span class="ml-4">Room Types</span>
+                              <span class="ml-4">Types</span>
                               <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                   <polyline points="10 15 15 20 20 15"></polyline><path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
                               </svg>
@@ -127,12 +127,12 @@
                           <ul id="sale" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                                   <li class="">
                                           <a href="">
-                                              <i class="las la-minus"></i><span>List Room Types</span>
+                                              <i class="las la-minus"></i><span>List Types</span>
                                           </a>
                                   </li>
                                   <li class="">
                                           <a href="">
-                                              <i class="las la-minus"></i><span>Add Room Type</span>
+                                              <i class="las la-minus"></i><span>Add Type</span>
                                           </a>
                                   </li>
                           </ul>
@@ -171,7 +171,7 @@
                       <i class="ri-menu-line wrapper-menu"></i>
                       <a href="../backend/index.html" class="header-logo">
                           <img src="images/favicon.png"  class="img-fluid rounded-normal" alt="logo">
-                          <h5 class="logo-title ml-3">SDN Hotel</h5>
+                          <h5 class="logo-title ml-3">Cinema A</h5>
                       </a>
                   </div>
                   <div class="iq-search-bar device-search">
@@ -244,8 +244,7 @@
                                                       class="rounded profile-img img-fluid avatar-70">
                                               </div>
                                               <div class="p-3">
-                                                  <h5 class="mb-1">  Auth::user()->full_name </h5>
-                                                  <p class="mb-0">  Auth::user()->email </p>
+                                                  <h5 class="mb-1">   Admin </h5>
                                                   <div class="d-flex align-items-center justify-content-center mt-3">
                                                       <a href="" class="btn border mr-2">Profile</a>
                                                       <a  href="{{asset('logout')}}" class="btn border">Sign Out</a>
@@ -268,7 +267,7 @@
             <div class="col-lg-4">
                 <div class="card card-transparent card-block card-stretch card-height border-none">
                     <div class="card-body p-0 mt-lg-2 mt-0">
-                        <h3 class="mb-3">Hi,  Auth::user()->full_name </h3>
+                        <h3 class="mb-3">Hi,  Admin  </h3>
                         <p class="mb-0 mr-4">We are very pleased to welcome you back to the admin system. You are successfully logged in and ready to manage and run your website.
                         <br>Wishing you a productive and successful working day!</p>
                     </div>

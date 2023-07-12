@@ -29,7 +29,7 @@ class AuthController extends Controller
         if ($validatedData['sign-in-email'] === 'admin@admin.com' && $validatedData['sign-in-passwd'] === 'haianh2003') {
             // Xác thực thành công, đăng nhập với tài khoản admin
             // Điều hướng tới trang dashboard hoặc trang chính của ứng dụng
-            return redirect()->intended('/admin');
+            return redirect()->intended('/admin/dashboard');
         } else {
             $user = User::where('email', $validatedData['sign-in-email'])->first();
     

@@ -3,14 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Support\Facades\Validator;
 
-class HomeController extends Controller
+class AdminController extends Controller
 {
     public function ShowUser()
     {
-        $users = User::latest()->paginate(9);
+        $user = User::latest()->paginate(9);
 
-        return view('admin.users.index', compact('users'))
+        return view('admin.users', compact('user'))
             ->with('i', (request()->input('page', 1) - 1) * 9);
     }
+
+    
 }

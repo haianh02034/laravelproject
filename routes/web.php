@@ -1,8 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Reques;
+use App\Http\Middleware\CheckAge;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\MovieController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,37 +21,37 @@ use App\Http\Controllers\HomeController;
 */
 
 
-Route::get('/register.html', function () {
+Route::get('/register', function () {
     return view('register');
 });
 
-Route::get('/index.html', function () {
+Route::get('/index', function () {
     return view('index');
 });
 
 
-Route::get('/movies.html', function () {
+Route::get('/movies', function () {
     return view('movies');
 });
 
-Route::get('/Contact_Us.html', function () {
+Route::get('/Contact_Us', function () {
     return view('Contact_Us');
 });
 
 
-Route::get('/about.html', function () {
+Route::get('/about', function () {
     return view('about');
 });
 
-Route::get('/ticket-booking.html', function () {
+Route::get('/ticket-booking', function () {
     return view('ticket-booking');
 });
 
-Route::get('/seat_sel.html', function () {
+Route::get('/seat_sel', function () {
     return view('seat_sel');
 });
 
-Route::get('/e-ticket.html', function () {
+Route::get('/e-ticket', function () {
     return view('e-ticket');
 });
 
@@ -58,10 +64,53 @@ Route::get('/admin/dashboard', function () {
 Route::get('/admin/users', function () {
     return view('admin.users');
 });
+Route::get('/admin/users', [AdminController::class, 'ShowUser'])->name('ShowUser');
+
+Route::post('/admin/users', 'AdminController@users')->name('admin.users');
+
+
+
+
+Route::get('/admin/movies', function () {
+    return view('admin.movies');
+});
+
+Route::get('/admin/movieadd', function () {
+    return view('admin.movieadd');
+});
+Route::get('/admin/movieadd', [MovieController::class, 'add'])->name('add');
+Route::post('/admin/movieadd', 'MovieController@Store')->name('admin.movies.store');
+
+
+
+
 
 Route::get('/admin/useradd', function () {
     return view('admin.useradd');
 });
+
+Route::get('/admin/useredit', function () {
+    return view('admin.useredit');
+});
+
+Route::get('/admin/orders', function () {
+    return view('admin.orders');
+});
+
+Route::get('/admin/orderadd', function () {
+    return view('admin.orderadd');
+});
+
+Route::get('/admin/master', function () {
+    return view('admin.master');
+});
+
+
+
+
+
+
+
 
 
 

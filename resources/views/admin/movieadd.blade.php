@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <title>Cinema A | Admin</title>
+      <title>Cinema A</title>
       
       <!-- Favicon -->
       <link rel="shortcut icon" href="{{ asset('images/favicon.png') }}" type="image/x-icon">
@@ -39,7 +39,7 @@
                   <ul id="iq-sidebar-toggle" class="iq-menu">
                       <li class="">
                           <a href="{{ url('admin/dashboard') }}" class="svg-icon">                        
-                              <svg  class="svg-icon" id="th-dash1" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                              <svg  class="svg-icon" id="p-dash1" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                   <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line>
                               </svg>
                               <span class="ml-4">Dashboards</span>
@@ -47,7 +47,7 @@
                       </li>
                       <li class=" ">
                           <a href="#people" class="collapsed" data-toggle="collapse" aria-expanded="false">
-                              <svg class="svg-icon" id="th-dash8" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                              <svg class="svg-icon" id="p-dash8" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                   <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
                               </svg>
                               <span class="ml-4">People</span>
@@ -56,12 +56,12 @@
                               </svg>
                           </a>
                           <ul id="people" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                            <li class="active">
+                            <li class="">
                                           <a href="{{ url('admin/users') }}">
                                               <i class="las la-minus"></i><span>Users</span>
                                           </a>
                                   </li>
-                                  <li class="">
+                                  <li class="active">
                                           <a href="{{ url('admin/useradd') }}">
                                               <i class="las la-minus"></i><span>Add Users</span>
                                           </a>
@@ -70,7 +70,7 @@
                       </li>
                       <li class=" ">
                           <a href="#product" class="collapsed" data-toggle="collapse" aria-expanded="false">
-                              <svg class="svg-icon" id="th-dash2" width="20" height="20"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle>
+                              <svg class="svg-icon" id="p-dash2" width="20" height="20"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle>
                                   <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
                               </svg>
                               <span class="ml-4">Orders</span>
@@ -80,12 +80,12 @@
                           </a>
                           <ul id="product" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                               <li class="">
-                                  <a href="{{ url('admin/orders') }}">
+                                  <a href="{{ url('admin-orders') }}">
                                       <i class="las la-minus"></i><span>List Order</span>
                                   </a>
                               </li>
                               <li class="">
-                                  <a href="{{ url('admin/orderadd') }}">
+                                  <a href="{{ url('admin-order-add') }}">
                                       <i class="las la-minus"></i><span>Add Order</span>
                                   </a>
                               </li>
@@ -93,7 +93,7 @@
                       </li>
                       <li class=" ">
                           <a href="#category" class="collapsed" data-toggle="collapse" aria-expanded="false">
-                              <svg class="svg-icon" id="th-dash3" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                              <svg class="svg-icon" id="p-dash3" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                                   <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
                               </svg>
                               <span class="ml-4">Movies</span>
@@ -109,17 +109,17 @@
                                   </li>
                                   <li class="">
                                           <a href="{{ url('admin/movieadd') }}">
-                                              <i class="las la-minus"></i><span>Add Movies</span>
+                                              <i class="las la-minus"></i><span>Add Movie</span>
                                           </a>
                                   </li>
                           </ul>
                       </li>
                       <li class=" ">
                           <a href="#sale" class="collapsed" data-toggle="collapse" aria-expanded="false">
-                              <svg class="svg-icon" id="th-dash4" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                              <svg class="svg-icon" id="p-dash4" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                   <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path>
                               </svg>
-                              <span class="ml-4">Types</span>
+                              <span class="ml-4">Movie Types</span>
                               <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                   <polyline points="10 15 15 20 20 15"></polyline><path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
                               </svg>
@@ -127,19 +127,19 @@
                           <ul id="sale" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                                   <li class="">
                                           <a href="">
-                                              <i class="las la-minus"></i><span>List Types</span>
+                                              <i class="las la-minus"></i><span>List Movie Types</span>
                                           </a>
                                   </li>
                                   <li class="">
                                           <a href="">
-                                              <i class="las la-minus"></i><span>Add Type</span>
+                                              <i class="las la-minus"></i><span>Add Movie Type</span>
                                           </a>
                                   </li>
                           </ul>
                       </li>
                       <li class=" ">
                           <a href="#purchase" class="collapsed" data-toggle="collapse" aria-expanded="false">
-                              <svg class="svg-icon" id="th-dash5" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                              <svg class="svg-icon" id="p-dash5" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
                                   <line x1="1" y1="10" x2="23" y2="10"></line>
                               </svg>
                               <span class="ml-4">Services</span>
@@ -162,16 +162,16 @@
                       </li>
                   </ul>
               </nav>
-              <div class="th-3"></div>
+              <div class="p-3"></div>
           </div>
           </div>      <div class="iq-top-navbar">
           <div class="iq-navbar-custom">
-              <nav class="navbar navbar-expand-lg navbar-light th-0">
+              <nav class="navbar navbar-expand-lg navbar-light p-0">
                   <div class="iq-navbar-logo d-flex align-items-center justify-content-between">
                       <i class="ri-menu-line wrapper-menu"></i>
                       <a href="../backend/index.html" class="header-logo">
                           <img src="../assets/images/logo.png" class="img-fluid rounded-normal" alt="logo">
-                          <h5 class="logo-title ml-3">Cinema A</h5>
+                          <h5 class="logo-title ml-3">SDN Hotel</h5>
                       </a>
                   </div>
                   <div class="iq-search-bar device-search">
@@ -201,8 +201,8 @@
                                   </a>
                                   <div class="iq-sub-dropdown dropdown-menu" aria-labelledby="dropdownMenuButton">
                                       <div class="card shadow-none m-0">
-                                          <div class="card-body th-0 ">
-                                              <div class="cust-title th-3">
+                                          <div class="card-body p-0 ">
+                                              <div class="cust-title p-3">
                                                   <div class="d-flex align-items-center justify-content-between">
                                                       <h5 class="mb-0">Notifications</h5>
                                                       <a class="badge badge-primary badge-card" href="#">3</a>
@@ -225,7 +225,7 @@
                                                       </div>
                                                   </a>
                                               </div>
-                                              <a class="right-ic btn btn-primary btn-block position-relative th-2" href="#"
+                                              <a class="right-ic btn btn-primary btn-block position-relative p-2" href="#"
                                                   role="button">
                                                   View All  
                                               </a>
@@ -240,15 +240,16 @@
                                   </a>
                                   <div class="iq-sub-dropdown dropdown-menu" aria-labelledby="dropdownMenuButton">
                                       <div class="card shadow-none m-0">
-                                          <div class="card-body th-0 text-center">
+                                          <div class="card-body p-0 text-center">
                                               <div class="media-body profile-detail text-center">
                                                   <img src="adm/images/page-img/profile-bg.jpg" alt="profile-bg"
                                                       class="rounded-top img-fluid mb-4">
                                                   <img src="adm/images/user/1.png"   alt="profile-img"
                                                       class="rounded profile-img img-fluid avatar-70">
                                               </div>
-                                              <div class="th-3">
+                                              <div class="p-3">
                                                   <h5 class="mb-1"> Admin </h5>
+                                                  <p class="mb-0">   </p>
                                                   <div class="d-flex align-items-center justify-content-center mt-3">
                                                       <a href="" class="btn border mr-2">Profile</a>
                                                       <a  href="{{asset('logout')}}" class="btn border">Sign Out</a>
@@ -265,76 +266,127 @@
           </div>
       </div> 
 <!-- main -->    
-      <div class="content-page">
-     <div class="container-fluid">
+<div class="content-page">
+     <div class="container-fluid add-form-list">
         <div class="row">
-            <div class="col-lg-12">
-                <div class="d-flex flex-wrap align-items-center justify-content-between mb-4">
-                    <div>
-                        <h4 class="mb-3">Movies List </h4>
-                        <th class="mb-0">A user dashboard lets you easily gather and visualize customer data from optimizing <br>
-                         the user experience, ensuring user retention.include('errors.note') </th>  
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between">
+                        <div class="header-title">
+                            <h4 class="card-title">Add Movie</h4>                          
+                <p>include('errors.note')</p>
+                        </div>
                     </div>
-                    <a href="{{ url('admin/movies') }}" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Add Movie</a>
-                </div>
-            </div>
-            <div class="col-lg-12">
-                <div class="table-responsive rounded mb-3">
-                <table class="data-table table mb-0 tbl-server-info">
-                    <thead class="bg-white text-uppercase">
-                        <tr class="ligth ligth-data">
-                            <th>ID</th>
-                            <th>Tên phim</th>
-                            <th>Thể loại</th>
-                            <th>Đạo diễn</th>
-                            <th>Diễn viên</th>
-                            <th>Nhà sản xuất</th>
-                            <th>Năm phát hành</th>
-                            <th>Sản xuất quốc gia</th>
-                            <th>Thời lượng</th>
-                            <th>Hình Ảnh</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody class="ligth-body">
-                        @php
-                            $movie = DB::table('movies')->get();
-                        @endphp
-                        @foreach($movie as $key => $movies)   
-                        <tr>
-                            @if (isset($movies->id))
-                            <th>{{ $movies->id }}</th>
-                            <th>{{ $movies->title }}</th>
-                            <th>{{ $movies->category }}</th>
-                            <th>{{ $movies->director }}</th>
-                            <th>{{ $movies->performer }}</th>
-                            <th>{{ $movies->producer }}</th>
-                            <th>{{ $movies->release_year }}</th>
-                            <th>{{ $movies->National_production }}</th>
-                            <th>{{ $movies->time }}</th>
-                            @endif
-                            <th><img src=" asset($movie->movie_photo) }}" alt="Ảnh phim"></th>
-                            <th>
-                                <div class="d-flex align-items-center list-action">
-                                <a class="badge bg-success mr-2" data-toggle="tooltip" data-placement="top" title="Edit" href="">
-                                        <i class="ri-pencil-line mr-0"></i>
-                                    </a>
-
-                                        <a class="badge bg-warning mr-2" data-toggle="tooltip" data-placement="top" title="Delete"
-                                    href=""><i class="ri-delete-bin-line mr-0"></i></a>
-
+                    <div class="card-body">
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                    <form method="POST" action="{{ route('admin.movies.store') }}" enctype="multipart/form-data">   
+                        @csrf
+                        <div class="row"> 
+                              
+                             
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Title *</label>
+                                    <input class="form-control" name="title" type="text" placeholder="title" />
+                                    <div class="help-block with-errors"></div>
                                 </div>
-                            </th>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                </table>
+                            </div>  
+                            
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Category *</label>
+                                    <input class="form-control" name="category" type="text" placeholder="category" />
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Director *</label>
+                                    <input class="form-control" name="director" type="text" placeholder="Director" />
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Performer *</label>
+                                    <input class="form-control" name="performer" type="text" placeholder="performer" />
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Producer *</label>
+                                    <input class="form-control" name="producer" type="text" placeholder="producer" />
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Release year *</label>
+                                    <input class="form-control" name="Release_year" type="text" placeholder="Release year" />
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>National production *</label>
+                                    <input class="form-control" name="National_production" type="text" placeholder="National production" />
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Time *</label>
+                                    <input class="form-control" name="time" type="text" placeholder="time" />
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Movie photo *</label>
+                                    <input type="file"  name="movie_photo" type="image" placeholder="Movie photo" />
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Language *</label>
+                                    <input class="form-control" name="Language" type="text" placeholder="Language" />
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                               
+                        </div>                            
+                        <button type="submit" class="btn btn-primary mr-2">Add Movie</button>
+                        <button type="reset" class="btn btn-danger">Reset</button>
+                    </form>
+
+                    </div>
                 </div>
             </div>
         </div>
         <!-- Page end  -->
-    </div> 
-</div> 
+    </div>
+      </div>
+    </div>
+ <!--end main  -->
     <!-- Modal Edit -->
     <div class="modal fade" id="edit-note" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -343,7 +395,7 @@
                     <div class="popup text-left">
                         <div class="media align-items-top justify-content-between">                            
                             <h3 class="mb-3">Product</h3>
-                            <div class="btn-cancel th-0" data-dismiss="modal"><i class="las la-times"></i></div>
+                            <div class="btn-cancel p-0" data-dismiss="modal"><i class="las la-times"></i></div>
                         </div>
                         <div class="content edit-notes">
                             <div class="card card-transparent card-block card-stretch event-note mb-0">
@@ -353,7 +405,7 @@
                                         </div>
                                     </div>
                                     <div id="quill-toolbar1">
-                                        <th>Virtual Digital Marketing Course every week on Monday, Wednesday and Saturday.Virtual Digital Marketing Course every week on Monday</th>
+                                        <p>Virtual Digital Marketing Course every week on Monday, Wednesday and Saturday.Virtual Digital Marketing Course every week on Monday</p>
                                     </div>
                                 </div>
                                 <div class="card-footer border-0">
@@ -368,7 +420,8 @@
                 </div>
             </div>
         </div>
-        </div>
+    </div>
+    </div>
     </div>
     <!-- Wrapper End-->
     <footer class="iq-footer">
@@ -383,7 +436,7 @@
                             </ul>
                         </div>
                         <div class="col-lg-6 text-right">
-                            <span class="mr-1"><script>document.write(new Date().getFullYear())</script>©</span> <a href="#" class="">SDN Hotel</a>.
+                            <span class="mr-1"><script>document.write(new Date().getFullYear())</script>©</span> <a href="#" class="">Cinema A</a>.
                         </div>
                     </div>
                 </div>

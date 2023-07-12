@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <title>SDN | Admin</title>
+      <title>Cinema A</title>
       
       <!-- Favicon -->
       <link rel="shortcut icon" href="{{ asset('images/favicon.png') }}" type="image/x-icon">
@@ -28,7 +28,7 @@
       <div class="iq-sidebar  sidebar-default ">
           <div class="iq-sidebar-logo d-flex align-items-center justify-content-between">
               <a  href="{{ url('admin-dashboard') }}" class="header-logo">
-                  <img src="images/favicon.png"  alt="Favicon"  class="img-fluid rounded-normal light-logo" alt="logo"><h5 class="logo-title light-logo ml-3">SDN Hotel</h5>
+                  <img src="images/favicon.png"  alt="Favicon"  class="img-fluid rounded-normal light-logo" alt="logo"><h5 class="logo-title light-logo ml-3">Cinema A</h5>
               </a>
               <div class="iq-menu-bt-sidebar ml-0">
                   <i class="las la-bars wrapper-menu"></i>
@@ -38,7 +38,7 @@
               <nav class="iq-sidebar-menu">
                   <ul id="iq-sidebar-toggle" class="iq-menu">
                       <li class="">
-                          <a href="{{ url('admin-dashboard') }}" class="svg-icon">                        
+                          <a href="{{ url('admin/dashboard') }}" class="svg-icon">                        
                               <svg  class="svg-icon" id="p-dash1" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                   <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line>
                               </svg>
@@ -57,12 +57,12 @@
                           </a>
                           <ul id="people" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                             <li class="">
-                                          <a href="{{ url('admin-users') }}">
+                                          <a href="{{ url('admin/users') }}">
                                               <i class="las la-minus"></i><span>Users</span>
                                           </a>
                                   </li>
                                   <li class="active">
-                                          <a href="{{ url('admin-user-add') }}">
+                                          <a href="{{ url('admin/useradd') }}">
                                               <i class="las la-minus"></i><span>Add Users</span>
                                           </a>
                                   </li> 
@@ -96,20 +96,20 @@
                               <svg class="svg-icon" id="p-dash3" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                                   <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
                               </svg>
-                              <span class="ml-4">Rooms</span>
+                              <span class="ml-4">Movies</span>
                               <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                   <polyline points="10 15 15 20 20 15"></polyline><path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
                               </svg>
                           </a>
                           <ul id="category" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                                   <li class="">
-                                          <a href="">
-                                              <i class="las la-minus"></i><span>List Rooms</span>
+                                          <a href="{{ url('admin/movies') }}">
+                                              <i class="las la-minus"></i><span>List Movies</span>
                                           </a>
                                   </li>
                                   <li class="">
-                                          <a href="">
-                                              <i class="las la-minus"></i><span>Add Room</span>
+                                          <a href="{{ url('admin/movieadd') }}">
+                                              <i class="las la-minus"></i><span>Add Movie</span>
                                           </a>
                                   </li>
                           </ul>
@@ -119,7 +119,7 @@
                               <svg class="svg-icon" id="p-dash4" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                   <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path>
                               </svg>
-                              <span class="ml-4">Room Types</span>
+                              <span class="ml-4">Types</span>
                               <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                   <polyline points="10 15 15 20 20 15"></polyline><path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
                               </svg>
@@ -127,12 +127,12 @@
                           <ul id="sale" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                                   <li class="">
                                           <a href="">
-                                              <i class="las la-minus"></i><span>List Room Types</span>
+                                              <i class="las la-minus"></i><span>List Types</span>
                                           </a>
                                   </li>
                                   <li class="">
                                           <a href="">
-                                              <i class="las la-minus"></i><span>Add Room Type</span>
+                                              <i class="las la-minus"></i><span>Add Type</span>
                                           </a>
                                   </li>
                           </ul>
@@ -171,7 +171,7 @@
                       <i class="ri-menu-line wrapper-menu"></i>
                       <a href="../backend/index.html" class="header-logo">
                           <img src="../assets/images/logo.png" class="img-fluid rounded-normal" alt="logo">
-                          <h5 class="logo-title ml-3">SDN Hotel</h5>
+                          <h5 class="logo-title ml-3">Cinema A</h5>
                       </a>
                   </div>
                   <div class="iq-search-bar device-search">
@@ -248,12 +248,14 @@
                                                       class="rounded profile-img img-fluid avatar-70">
                                               </div>
                                               <div class="p-3">
-                                                  <h5 class="mb-1">  Auth::user()->full_name </h5>
-                                                  <p class="mb-0">  Auth::user()->email </p>
+                                                    @if (Auth::check())
+                                                  <h5 class="mb-1">  {{ Auth::user()->name }}</h5>
+                                                  <p class="mb-0">  {{ Auth::user()->email }} </p>
                                                   <div class="d-flex align-items-center justify-content-center mt-3">
                                                       <a href="" class="btn border mr-2">Profile</a>
                                                       <a  href="{{asset('logout')}}" class="btn border">Sign Out</a>
                                                   </div>
+                                                    @endif
                                               </div>
                                           </div>
                                       </div>
@@ -278,48 +280,41 @@
                         </div>
                     </div>
                     <div class="card-body">
-                    <form action=" route('useradd') " method="POST" data-toggle="validator">
+                    <form name="sign-up-form" onsubmit="return signUpValidateForm()"
+			        action="{{ route('register') }}" method="POST" class="register-form" id="register-form" onsubmit="return validateForm();">
                         @csrf
                         <div class="row"> 
                             <div class="col-md-12">                      
                                 <div class="form-group">
                                     <label>Full Name *</label>
-                                    <input type="text" class="form-control" placeholder="Enter Full Name" name="full_name" required>
+                                    <input class="form-control" name="sign-up-name" type="text" placeholder="Name" />
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>    
                             <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Phone Number *</label>
-                                    <input type="text" class="form-control" placeholder="Enter Phone No" name="phone" required>
-                                    <div class="help-block with-errors"></div>
-                                </div>
+
                             </div> 
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Email *</label>
-                                    <input type="text" class="form-control" placeholder="Enter Email" name="email" required>
+                                    <input class="form-control" name="sign-up-email" type="email" placeholder="Email" />
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>  
                             <div class="col-md-12">
-                                <div class="form-group">
-                                    <label>Address *</label>
-                                    <input type="text" class="form-control" placeholder="Enter Address" name="address" required>
-                                    <div class="help-block with-errors"></div>
-                                </div>
+                                
                             </div> 
                             <div class="col-md-6">                      
                                 <div class="form-group">
                                     <label>Password</label>
-                                    <input type="password" class="form-control" placeholder="Enter Password" name="password" required>
+                                    <input class="form-control" name="sign-up-passwd" type="password" placeholder="Password" />
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>  
                             <div class="col-md-6">                      
                                 <div class="form-group">
                                     <label>Confirm Password</label>
-                                    <input type="password" class="form-control" placeholder="Enter Confirm Password" name="confirm_password" required>
+                                    <input class="form-control" name="confirm_password" type="password" placeholder="Confirm Password" />
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div> 
@@ -401,7 +396,7 @@
                             </ul>
                         </div>
                         <div class="col-lg-6 text-right">
-                            <span class="mr-1"><script>document.write(new Date().getFullYear())</script>©</span> <a href="#" class="">SDN Hotel</a>.
+                            <span class="mr-1"><script>document.write(new Date().getFullYear())</script>©</span> <a href="#" class="">Cinema A</a>.
                         </div>
                     </div>
                 </div>

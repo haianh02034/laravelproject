@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function showMovies()
+    public function showMovie()
     {
         $movies = Movie::all();
-        return view('movies.index', compact('movies'));
+        return view('admin.movies') ->with('movies', $movies);
     }  
 }
