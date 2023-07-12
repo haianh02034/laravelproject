@@ -64,10 +64,22 @@ class MovieController extends Controller
             $newMovie->National_production = $request->National_production;
             $newMovie->time = $request->time;
             $newMovie->language = $request->language;
-            $newMovie->image = $fileName;
+            $newMovie->movie_photo = $fileName;
             $newMovie->save();
-            return redirect()->route('admin.movie')
+            return redirect()->route('admin.movies')
                 ->with('success', 'Product created successfully.');
         }
+    }
+
+    public function destroy($id)
+    {
+        $movie = Movie::find($id);
+        $image_path = "/image/movie/.$movie->image";  // Value is not URL but directory file path
+        if(File::exists($image_path)) {
+            File::delete($image_path);
+        }
+        $movie->delete();
+        return redirect()->route('admin.movies')
+            ->with('success', 'Product deleted successfully');
     }
 }

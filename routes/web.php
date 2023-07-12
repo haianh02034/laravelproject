@@ -73,13 +73,12 @@ Route::post('/admin/users', 'AdminController@users')->name('admin.users');
 
 Route::get('/admin/movies', function () {
     return view('admin.movies');
-});
+})->name('admin.movies');
 
-Route::get('/admin/movieadd', function () {
-    return view('admin.movieadd');
-});
+
 Route::get('/admin/movieadd', [MovieController::class, 'add'])->name('add');
-Route::post('/admin/movieadd', 'MovieController@Store')->name('admin.movies.store');
+Route::post('/admin/movieadd', [MovieController::class, 'store'])->name('admin.movies.store');
+Route::get('/movie/delete/{id}', [MovieController::class, 'destroy'])->name('movies.destroy');
 
 
 

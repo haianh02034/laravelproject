@@ -273,8 +273,7 @@
                 <div class="card">
                     <div class="card-header d-flex justify-content-between">
                         <div class="header-title">
-                            <h4 class="card-title">Add Movie</h4>                          
-                <p>include('errors.note')</p>
+                            <h4 class="card-title">Add Movie</h4>
                         </div>
                     </div>
                     <div class="card-body">
@@ -336,7 +335,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Release year *</label>
-                                    <input class="form-control" name="Release_year" type="text" placeholder="Release year" />
+                                    <input class="form-control" name="release_year" type="text" placeholder="release year" />
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>
@@ -368,7 +367,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Language *</label>
-                                    <input class="form-control" name="Language" type="text" placeholder="Language" />
+                                    <input class="form-control" name="language" type="text" placeholder="Language" />
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>

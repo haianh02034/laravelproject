@@ -12,3 +12,6 @@ class HomeController extends Controller
         return view('admin.movies') ->with('movies', $movies);
     }  
 }
+
+
+
