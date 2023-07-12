@@ -369,29 +369,31 @@
 					</div>
 				</div>
 				<div class="owl-three owl-carousel owl-theme">
-					
-					@foreach ($movies as $movie)
-    <div class="item vhny-grid">
-        <div class="box16 mb-0">
-            <a href="movies.html">
-                <figure>
-                    <img class="img-fluid" src="{{ asset($movie->movie_photo) }}" alt="">
-                </figure>
-                <div class="box-content">
-                    <h4> <span class="post"><span class="fa fa-clock-o"></span> {{ $movie->time }}</span>
-                        <span class="post fa fa-heart text-right"></span>
-                    </h4>
-                </div>
-                <span class="fa fa-play video-icon" aria-hidden="true"></span>
-            </a>
-        </div>
-        <h3> <a class="title-gd" href="movies.html">{{ $movie->title }}</a></h3>
-        <p>{{ $movie->category  }}</p>
-        <div class="button-center text-center mt-4">
-            <a href="movies.html" class="btn watch-button">Watch now</a>
-        </div>
-    </div>
-@endforeach
+						@php
+                            $movie = DB::table('movies')->get();
+                        @endphp
+						@foreach($movie as $key => $movies)
+					<div class="item vhny-grid">
+						<div class="box16 mb-0">
+							<a href="movies.html">
+								<figure>
+									<img class="img-fluid" src=" asset($movie->movie_photo) }}" alt="">
+								</figure>
+								<div class="box-content">
+									<h4> <span class="post"><span class="fa fa-clock-o"></span> {{ $movies->time }}</span>
+										<span class="post fa fa-heart text-right"></span>
+									</h4>
+								</div>
+								<span class="fa fa-play video-icon" aria-hidden="true"></span>
+							</a>
+						</div>
+						<h3> <a class="title-gd" href="movies.html">{{ $movies->title }}</a></h3>
+						<p>{{ $movies->category  }}</p>
+						<div class="button-center text-center mt-4">
+							<a href="movies.html" class="btn watch-button">Watch now</a>
+						</div>
+					</div>
+					@endforeach
 
 					<div class="item vhny-grid">
 						<div class="box16 mb-0">

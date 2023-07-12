@@ -206,11 +206,7 @@
               <div>
                 <iframe id="seat-sel-iframe"
                   style="  box-shadow: 0 14px 12px 0 var(--theme-border), 0 10px 50px 0 var(--theme-border); width: 800px; height: 550px; display: block; margin-left: auto; margin-right: auto;"
-<<<<<<< Updated upstream
-                  src="seat_sel"></iframe>
-=======
-                  src="display_selection.html"></iframe>
->>>>>>> Stashed changes
+                  src="seat_sel.html"></iframe>
               </div>
               <br>
               <input type="button" name="next-step" class="next-step" value="Proceed to Payment" />
