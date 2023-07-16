@@ -313,7 +313,7 @@
                             <th>{{ $movies->National_production }}</th>
                             <th>{{ $movies->time }}</th>
                             @endif
-                            <th><img src=" asset($movie->movie_photo) }}" alt="Ảnh phim"></th>
+                            <th><img src="{{ asset('/images/movie/' . $movies->movie_photo) }}" alt="Ảnh phim"></th>
                             <th>
                                 <div class="d-flex align-items-center list-action">
                                 <a class="badge bg-success mr-2" data-toggle="tooltip" data-placement="top" title="Edit" href="">

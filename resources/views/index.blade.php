@@ -369,15 +369,17 @@
 					</div>
 				</div>
 				<div class="owl-three owl-carousel owl-theme">
-						@php
-                            $movie = DB::table('movies')->get();
-                        @endphp
-						@foreach($movie as $key => $movies)
+					@php
+					$movie = DB::table('movies')->get();
+					@endphp
+		@foreach($movie as $key => $movies)
 					<div class="item vhny-grid">
+						
 						<div class="box16 mb-0">
 							<a href="movies.html">
+								
 								<figure>
-									<img class="img-fluid" src=" asset($movie->movie_photo) }}" alt="">
+									<img src="{{ asset('/images/movie/' . $movies->movie_photo) }}" alt="Ảnh phim">
 								</figure>
 								<div class="box-content">
 									<h4> <span class="post"><span class="fa fa-clock-o"></span> {{ $movies->time }}</span>
@@ -389,6 +391,8 @@
 						</div>
 						<h3> <a class="title-gd" href="movies.html">{{ $movies->title }}</a></h3>
 						<p>{{ $movies->category  }}</p>
+						<br>
+											
 						<div class="button-center text-center mt-4">
 							<a href="movies.html" class="btn watch-button">Watch now</a>
 						</div>

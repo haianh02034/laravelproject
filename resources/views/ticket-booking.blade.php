@@ -29,7 +29,8 @@
         
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
         </div>
-
+        
+     
         {{-- <div class="Login_SignUp" id="login_s">
           <!-- style="font-size: 2rem ; display: inline-block; position: relative;" -->
           <!-- <li class="nav-item"> -->
@@ -60,20 +61,26 @@
         <div class="px-0 pt-4 pb-0 mt-3 mb-3">
           <form id="form">
             <ul id="progressbar" class="progressbar-class">
+
               <li class="active" id="step1">Show timing selection</li>
               <li id="step2" class="not_active">Seat Selection</li>
               <li id="step3" class="not_active">Payment</li>
               <li id="step4" class="not_active">E-Ticket</li>
             </ul>
             <br>
-            <fieldset>
+            <fieldset>           
+              
+              
               <div id="screen-select-div">
+                <h2>Ticket Booking - {{ session('movie_title') }}</h2>              
                 <h2>Show time Selection</h2>
                 <div class="carousel carousel-nav" data-flickity='{"contain": true, "pageDots": false }'>
                   <div class="carousel-cell" id="1" onclick="myFunction(1)">
                     <div class="date-numeric">13</div>
                     <div class="date-day">Today</div>
                   </div>
+
+
 
                   <div class="carousel-cell" id="2" onclick="myFunction(2)">
                     <div class="date-numeric">14</div>
