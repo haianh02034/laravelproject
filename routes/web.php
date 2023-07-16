@@ -117,7 +117,7 @@ Route::get('/admin/master', function () {
 
 use App\Http\Controllers\BookingController;
 
-Route::get('/ticket-booking', [BookingController::class, 'showTicketBookingPage'])->name('ticket-booking');
+Route::get('/ticket-booking', [BookingController::class, 'index'])->name('ticket-booking');
 
 
 

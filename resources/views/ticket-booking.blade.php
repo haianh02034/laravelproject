@@ -72,7 +72,16 @@
               
               
               <div id="screen-select-div">
-                <h2>Ticket Booking - {{ session('movie_title') }}</h2>              
+                <h2>Ticket Booking</h2>   
+                
+                @if ($movie)
+            <h1>Booking tickets for movie: {{ $movie->title }}</h1>
+            <!-- Display other movie details here -->
+        @else
+            <h1>No movie selected for booking.</h1>
+        @endif
+        <!-- Your ticket booking page content here -->
+        <!-- Your ticket booking form or content here -->         
                 <h2>Show time Selection</h2>
                 <div class="carousel carousel-nav" data-flickity='{"contain": true, "pageDots": false }'>
                   <div class="carousel-cell" id="1" onclick="myFunction(1)">

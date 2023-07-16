@@ -4,17 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Booking;
-
+use App\Models\Movie;
 
 class BookingController extends Controller
 {
     //
-    public function showTicketBookingPage(Request $request)
+    public function index(Request $request)
     {
-        // Lấy tên phim từ request và lưu vào Session
-        $movieTitle = $request->input('movie_title');
-        $request->session()->put('movie_title', $movieTitle);
+        // Get the selected movie ID from the query parameter
+        $movieId = $request->input('movie_id');
 
-        return view('ticket-booking', compact('movieTitle'));
+        // Retrieve the movie details based on the movie ID from the database
+        $movie = Movie::find($movieId);
+
+        // Pass the movie title to the ticket-booking view
+        return view('ticket-booking', ['movie' => $movie]);
     }
 }
