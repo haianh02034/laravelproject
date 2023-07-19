@@ -19,5 +19,22 @@ class BookingController extends Controller
 
         // Pass the movie title to the ticket-booking view
         return view('ticket-booking', ['movie' => $movie]);
+        return view('seat_sel', ['movie' => $movie]);
+
+
     }
+
+    public function seatSelection(Request $request)
+    {
+        $movieId = $request->input('movie_id');
+
+        // Retrieve the movie details based on the movie ID from the database
+        $movie = Movie::find($movieId);
+
+        // Pass the movie title to the ticket-booking view
+        return view('seat_sel', ['movie' => $movie]);
+
+    }
+
+    
 }

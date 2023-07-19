@@ -80,13 +80,9 @@
 				<input name="sign-in-passwd" type="password" placeholder="Password" />
 				<a href="#">Forgot your password?</a>
 				<button type="submit" name="signin" id="signin" class="form-submit" value="Sign In">Sign In </button>
-				
-
-
 				{{ csrf_field()}}
 			</form>
 		</div>
-
 		<div class="overlay-container">
 			<div class="overlay">
 				{{-- <div class="overlay-panel overlay-left">

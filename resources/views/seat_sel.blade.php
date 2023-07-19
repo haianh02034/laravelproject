@@ -16,8 +16,11 @@
 </head>
 
 <body>
+
 <div class="content">
+	
 	<h2>Seat Booking</h2>
+	
 	<div class="main">
 		<div class="demo">
 			<div id="seat-map">
@@ -32,10 +35,12 @@
 					<li>Selected Seats</li>
 				</ul>
 				<ul class="book-right">
-					<li>: Commando 3</li>
-					<li>: April 12, 22:00</li>
+					
+            
+					<li>: <span id="movieName"></span></li>
+                    <li>: <span id="selectedTime"></span></li>
 					<li>: <span id="counter">0</span></li>
-					<li>: <b><i>RS.</i><span id="total">0</span></b></li>
+					<li>: <b><i></i><span id="total">0</span>$</b></li>
 				</ul>
 				<div class="clear"></div>
 				<ul id="selected-seats" class="scrollbar scrollbar1"></ul>
@@ -45,7 +50,7 @@
 			</div>
 
 			<script type="text/javascript">
-				var price = 110; //price
+				var price = 20; //price
 				$(document).ready(function () {
 					var $cart = $('#selected-seats'), //Sitting Area
 						$counter = $('#counter'), //Votes
@@ -123,6 +128,54 @@
 			</script>
 		</div>
 	</div>
+	
+	{{-- <script>
+        // Hàm lấy tham số từ URL
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+
+// Lấy tên phim từ URL
+var movieName = getParameterByName('movie_name');
+// Lấy thời gian từ URL
+var selectedTime = getParameterByName('selected_time');
+// Hiển thị tên phim đã chọn
+var selectedMovieNameElement = document.getElementById('selected-movie-name');
+selectedMovieNameElement.innerText = movieName;
+// Hiển thị thời gian đã chọn
+var selectedTimeElement = document.getElementById('selected-time');
+selectedTimeElement.innerText = selectedTime;
+
+
+    </script> --}}
+
+	<script>
+        // Lấy các tham số từ URL bằng JavaScript
+        function getParameterByName(name) {
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(window.location.search);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+        // Lấy giá trị của tham số movie_id, selected_time và movie_title từ query string
+        var movieId = getParameterByName('movie_id');
+        var selectedTime = getParameterByName('selected_time');
+        var movieTitle = getParameterByName('movie_title');
+
+        // Hiển thị thông tin phim và thời gian đã chọn lên trang seat_sel.html
+        document.getElementById('movieName').innerText = movieTitle;
+        document.getElementById('selectedTime').innerText = selectedTime;
+    </script>
+
 	<script type="text/javascript" src="{{ asset('js/theme-change-seat-sel.js') }}"></script>
     <script src="{{ asset('js/jquery.nicescroll.js') }}"></script>
     <script src="{{ asset('js/scripts.js') }}"></script>

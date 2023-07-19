@@ -82,149 +82,195 @@
         @endif
         <!-- Your ticket booking page content here -->
         <!-- Your ticket booking form or content here -->         
-                <h2>Show time Selection</h2>
-                <div class="carousel carousel-nav" data-flickity='{"contain": true, "pageDots": false }'>
-                  <div class="carousel-cell" id="1" onclick="myFunction(1)">
-                    <div class="date-numeric">13</div>
-                    <div class="date-day">Today</div>
-                  </div>
-
-
-
-                  <div class="carousel-cell" id="2" onclick="myFunction(2)">
-                    <div class="date-numeric">14</div>
-                    <div class="date-day">Tomorrow</div>
-                  </div>
-                  <div class="carousel-cell" id="3" onclick="myFunction(3)">
-                    <div class="date-numeric">15</div>
-                    <div class="date-day">Monday</div>
-                  </div>
-                  <div class="carousel-cell" id="4" onclick="myFunction(4)">
-                    <div class="date-numeric">16</div>
-                    <div class="date-day">Tuesday</div>
-                  </div>
-                  <div class="carousel-cell" id="5" onclick="myFunction(5)">
-                    <div class="date-numeric">17</div>
-                    <div class="date-day">Wednesday</div>
-                  </div>
-                  <div class="carousel-cell" id="6" onclick="myFunction(6)">
-                    <div class="date-numeric">18</div>
-                    <div class="date-day">Thursday</div>
-                  </div>
-                  <div class="carousel-cell" id="7" onclick="myFunction(7)">
-                    <div class="date-numeric">19</div>
-                    <div class="date-day">Friday</div>
-                  </div>
+        <h2>Show time Selection</h2>
+        <div class="carousel carousel-nav" data-flickity='{"contain": true, "pageDots": false }'>
+            <div class="carousel-cell" id="1" onclick="myFunction('Today')">
+                <div class="date-numeric">13</div>
+                <div class="date-day">Today</div>
+            </div>
+            <div class="carousel-cell" id="2" onclick="myFunction('Tomorrow')">
+                <div class="date-numeric">14</div>
+                <div class="date-day">Tomorrow</div>
+            </div>
+            <div class="carousel-cell" id="3" onclick="myFunction('Monday')">
+                <div class="date-numeric">15</div>
+                <div class="date-day">Monday</div>
+            </div>
+            <div class="carousel-cell" id="4" onclick="myFunction('Tuesday')">
+                <div class="date-numeric">16</div>
+                <div class="date-day">Tuesday</div>
+            </div>
+            <div class="carousel-cell" id="5" onclick="myFunction('Wednesday')">
+                <div class="date-numeric">17</div>
+                <div class="date-day">Wednesday</div>
+            </div>
+            <div class="carousel-cell" id="6" onclick="myFunction('Thursday')">
+                <div class="date-numeric">18</div>
+                <div class="date-day">Thursday</div>
+            </div>
+            <div class="carousel-cell" id="7" onclick="myFunction('Friday')">
+                <div class="date-numeric">19</div>
+                <div class="date-day">Friday</div>
+            </div>
+        </div>
+        
+        <ul class="time-ul">
+            <li class="time-li">
+                <div class="selected-screen" id="selected-screen">
+                    Screen 1
                 </div>
-                <ul class="time-ul">
-                  <li class="time-li">
-                    <div class="screens">
-                      Screen 1
-                    </div>
-                    <div class="time-btn">
-                      <button class="screen-time" onclick="timeFunction('Today, 1:05 PM')">
+                <div class="time-btn">
+                    <button class="screen-time" onclick="timeFunction('Today, 1:05 PM')">
                         1:05 PM
-                      </button>
-                      <button class="screen-time" onclick="timeFunction()">
+                    </button>
+                    <button class="screen-time" onclick="timeFunction('Today, 4:00 PM')">
                         4:00 PM
-                      </button>
-                      <button class="screen-time" onclick="timeFunction()">
+                    </button>
+                    <button class="screen-time" onclick="timeFunction('Today, 9:00 PM')">
                         9:00 PM
-                      </button>
-                    </div>
-                  </li>
-                  <li class="time-li">
-                    <div class="screens">
-                      Screen 2
-                    </div>
-                    <div class="time-btn">
-                      <button class="screen-time" onclick="timeFunction()">
+                    </button>
+                </div>
+            </li>
+            <li class="time-li">
+                <div class="selected-screen" id="selected-screen">
+                    Screen 2
+                </div>
+                <div class="time-btn">
+                    <button class="screen-time" onclick="timeFunction('Today, 3:00 PM')">
                         3:00 PM
-                      </button>
-                    </div>
-                  </li>
-                  <li class="time-li">
-                    <div class="screens">
-                      Screen 3
-                    </div>
-                    <div class="time-btn">
-                      <button class="screen-time" onclick="timeFunction()">
+                    </button>
+                </div>
+            </li>
+            <li class="time-li">
+                <div class="selected-screen" id="selected-screen">
+
+                    Screen 3
+                </div>
+                <div class="time-btn">
+                    <button class="screen-time" onclick="timeFunction('Today, 9:05 AM')">
                         9:05 AM
-                      </button>
-                      <button class="screen-time" onclick="timeFunction()">
+                    </button>
+                    <button class="screen-time" onclick="timeFunction('Today, 10:00 PM')">
                         10:00 PM
-                      </button>
-                    </div>
-                  </li>
-                  <li class="time-li">
-                    <div class="screens">
-                      Screen 4
-                    </div>
-                    <div class="time-btn">
-                      <button class="screen-time" onclick="timeFunction()">
+                    </button>
+                </div> 
+            </li>
+            <li class="time-li">
+                <div class="selected-screen" id="selected-screen"class="selected-screen" id="selected-screen">
+                    Screen 4
+                </div>
+                <div class="time-btn">
+                    <button class="screen-time" onclick="timeFunction('Today, 9:05 AM')">
                         9:05 AM
-                      </button>
-                      <button class="screen-time" onclick="timeFunction()">
+                    </button>
+                    <button class="screen-time" onclick="timeFunction('Today, 11:00 AM')">
                         11:00 AM
-                      </button>
-                      <button class="screen-time" onclick="timeFunction()">
+                    </button>
+                    <button class="screen-time" onclick="timeFunction('Today, 3:00 PM')">
                         3:00 PM
-                      </button>
-                      <button class="screen-time" onclick="timeFunction()">
+                    </button>
+                    <button class="screen-time" onclick="timeFunction('Today, 7:00 PM')">
                         7:00 PM
-                      </button>
-                      <button class="screen-time" onclick="timeFunction()">
+                    </button>
+                    <button class="screen-time" onclick="timeFunction('Today, 10:00 PM')">
                         10:00 PM
-                      </button>
-                      <button class="screen-time" onclick="timeFunction()">
+                    </button>
+                    <button class="screen-time" onclick="timeFunction('Today, 11:00 PM')">
                         11:00 PM
-                      </button>
-                    </div>
-                  </li>
-                  <li class="time-li">
-                    <div class="screens">
-                      Screen 5
-                    </div>
-                    <div class="time-btn">
-                      <button class="screen-time" onclick="timeFunction()">
+                    </button>
+                </div>
+            </li>
+            <li class="time-li">
+                <div class="selected-screen" id="selected-screen">
+                    Screen 5
+                </div>
+                <div class="time-btn">
+                    <button class="screen-time" onclick="timeFunction('Today, 9:05 AM')">
                         9:05 AM
-                      </button>
-                      <button class="screen-time" onclick="timeFunction()">
+                    </button>
+                    <button class="screen-time" onclick="timeFunction('Today, 12:00 PM')">
                         12:00 PM
-                      </button>
-                      <button class="screen-time" onclick="timeFunction()">
+                    </button>
+                    <button class="screen-time" onclick="timeFunction('Today, 1:00 PM')">
                         1:00 PM
-                      </button>
-                      <button class="screen-time" onclick="timeFunction()">
+                    </button>
+                    <button class="screen-time" onclick="timeFunction('Today, 3:00 PM')">
                         3:00 PM
-                      </button>
-                    </div>
-                  </li>
+                    </button>
+                </div>
+            </li>
+        </ul>
+        </div>
+        
+        {{-- <input id="screen-next-btn" type="submit" name="next-step" class="next-step" value="Continue Booking" onclick="redirectToSeatSel({{ $movie->id }})"> --}}
+        <input id="screen-next-btn" type="submit" name="next-step" class="next-step" value="Continue Booking" onclick="redirectToSeatSel({{ $movie->id }}, '{{ $movie->title }}')">
+        
+        
 
-                </ul>
-              </div>
-              <input id="screen-next-btn" type="submit" name="next-step" class="next-step" value="Continue Booking" onclick="redirectFunction()"
+          
+           
+      
+
+      
+<script>
+  function redirectToSeatSel(movieId, movieTitle) {
+        // Lấy giá trị của $selectedTime từ thành phần có id là 'selected-time'
+        var selectedTimeElement = document.getElementById('selected-time');
+        var selectedTime = selectedTimeElement ? selectedTimeElement.value : '';
+
+        // Kiểm tra xem movieId, movieTitle và selectedTime có giá trị không
+        if (movieId && movieTitle && selectedTime) {
+            // Tạo URL sử dụng route helper trong Laravel
+            var redirectToUrl = "{{ route('seat-selection', ['movie_id' => ':movieId', 'selected_time' => ':selectedTime', 'movie_title' => ':movieTitle']) }}";
+            redirectToUrl = redirectToUrl.replace(':movieId', movieId)
+                .replace(':selectedTime', encodeURIComponent(selectedTime))
+                .replace(':movieTitle', encodeURIComponent(movieTitle));
+            // Chuyển hướng đến trang Seat Selection với thông tin phim và thời gian đã chọn
+            window.location.href = redirectToUrl;
+        } else {
+            // Xử lý khi movieId, movieTitle hoặc selectedTime không có giá trị
+            console.error('Movie information or selectedTime is missing.');
+        }
+    }
+
+  // Hàm myFunction
+  function myFunction(movieId) {
+      // Lấy ngày và tên ngày tương ứng với carousel-cell được chọn
+      var selectedDate = document.querySelector('#' + movieId + ' .date-numeric').innerText;
+      var selectedDay = document.querySelector('#' + movieId + ' .date-day').innerText;
+      // Tạo chuỗi dữ liệu để truyền vào URL
+      var dataToPass = 'selected_date=' + selectedDate + '&selected_day=' + selectedDay;
+      // Chuyển hướng sang trang "seat_sel.html" và truyền thông tin qua URL
+      window.location.href = 'seat_sel.html?' + dataToPass;
+  }
+
+  // Hàm timeFunction
+  function timeFunction(selectedTime) {
+      if (selectedTime) {
+          // Tạo chuỗi dữ liệu để truyền vào URL
+          var dataToPass = 'selected_time=' + encodeURIComponent(selectedTime);
+          // Chuyển hướng sang trang "seat_sel.html" và truyền thông tin qua URL
+          window.location.href = 'seat_sel.html?' + dataToPass;
+      }
+  }
+</script>
+
+          
+
+     
             
-                disabled />
-                <script>
-                    function myFunction(date, time) {
-                        var url = "display_selection.html?date=" + encodeURIComponent(date) + "&time=" + encodeURIComponent(time);
-                        window.location.href = url;
-                      }
-
-
-
-
-                </script>
+            
+       
+          
                 
             </fieldset>
             <fieldset>
               <div>
                 <iframe id="seat-sel-iframe"
                   style="  box-shadow: 0 14px 12px 0 var(--theme-border), 0 10px 50px 0 var(--theme-border); width: 800px; height: 550px; display: block; margin-left: auto; margin-right: auto;"
-                  src="seat_sel.html"></iframe>
-              </div>
-              <br>
+                  src="{{ route('seat-selection', ['movie_id' => $movie->id,  'movie_title' => $movie->title]) }}"></iframe>
+                  {{-- 'selected_time' => $selectedTime, --}}
+                  <br>
               <input type="button" name="next-step" class="next-step" value="Proceed to Payment" />
               <input type="button" name="previous-step" class="previous-step" value="Back" />
             </fieldset>

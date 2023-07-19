@@ -1,23 +1,18 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use App\Models\Category;
 use App\Models\Movie;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
-
 class MovieController extends Controller
 {
     public function ShowMovie()
     {
         $movie = Movie::latest()->paginate(9);
-
         return view('admin.movieadd', compact('movie'))
             ->with('i', (request()->input('page', 1) - 1) * 9);
     }
-
     public function add()
     {
         $movies = Movie::all();
@@ -28,7 +23,6 @@ class MovieController extends Controller
     {
         if ($request->isMethod('POST')) {
             $validator = Validator::make($request->all(), [
-
                 'title' => 'required',
                 'category' => 'required',
                 'director' => 'required',

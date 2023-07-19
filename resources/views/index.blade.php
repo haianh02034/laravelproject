@@ -10,13 +10,8 @@
 	<link rel="stylesheet" href="{{ asset('assets/css/style-starter.css') }}">
 	<link href="//fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,600&display=swap"
 	rel="stylesheet">
-
-
-
 </head>
-
 <body>
-
 	<!-- header -->
 	<header id="site-header" class="w3l-header fixed-top">
 		<!--/nav-->
@@ -25,10 +20,7 @@
 				<h1><a class="navbar-brand" href="index.html"><span class="fa fa-play icon-log"
 							aria-hidden="true"></span>
 							Cinema A</a></h1>
-				<!-- if logo is image enable this   
-						<a class="navbar-brand" href="#index.html">
-							<img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
-						</a> -->
+				
 				<button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
 					data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
 					aria-label="Toggle navigation">
@@ -48,8 +40,6 @@
 						<li class="nav-item">
 							<a class="nav-link" href="about.html">About</a>
 						</li>
-
-
 						{{-- <li class="nav-item">
 							<a class="nav-link" href="Contact_Us.html">Contact</a>
 						</li> --}}

@@ -16,10 +16,6 @@ class AuthController extends Controller
     {
         return view('sign_in');
     }
-
-    
-
-
     public function postLogin(Request $request)
     {
         $validatedData = $request->validate([
@@ -44,32 +40,16 @@ class AuthController extends Controller
                 ]);
             }
         }
-        // $user = User::where('email', $validatedData['sign-in-email'])->first();
-    
-        // if ($user && Hash::check($validatedData['sign-in-passwd'], $user->password)) {
-        //     // Xác thực thành công
-        //     Auth::login($user);
-        //     return redirect()->intended('/index.html');
-        // } else {
-        //     // Xác thực thất bại
-        //     return redirect()->back()->withErrors([
-        //         'signin' => 'Invalid credentials',
-        //     ]);
-        // }
     }
-
-
     public function getLogout()
     {
         Auth::logout();
         return redirect()->intended('/sign_in.html');
     }
-
     public function getRegister()
     {
         return view('register');
     }
-
     public function postRegister(Request $request)
     {
         $validatedData = $request->validate([
@@ -88,27 +68,18 @@ class AuthController extends Controller
         $user->save();
         return redirect()->back()->with('success', 'You have successfully created an account.');
     }
-
-
 //login-goole
     public function login()
     {
         return view('sign_in');
     }
-
-
     public function redirectToGoogle()
     {
         return Socialite::driver('google')->redirect();
     }
-
     public function handleGoogleCallback()
     {
-
-/////
         $user = Socialite::driver('google')->stateless()->user();
-
-
         $findUser = User::where('email', $user->getEmail())->first();
         if ($findUser) {
             Auth::login($findUser);
@@ -133,46 +104,30 @@ public function showProfile()
     $user = Auth::user();
     return view('profile', ['user' => $user]);
 }
-
 // Cập nhật thông tin cá nhân
 public function updateProfile(Request $request)
 {
     $user = Auth::user();
-
     $validatedData = $request->validate([
         'name' => 'required',
         'email' => 'required|email|unique:users,email,' . $user->id,
         'current_password' => 'required',
         'new_password' => 'nullable|min:6|different:current_password|confirmed',
     ]);
-
     // Kiểm tra mật khẩu cũ
     if (!Hash::check($validatedData['current_password'], $user->password)) {
         return redirect()->back()
             ->withErrors(['current_password' => 'Mật khẩu cũ không chính xác.'])
             ->withInput();
     }
-
     $user->name = $validatedData['name'];
     $user->email = $validatedData['email'];
-
     // Cập nhật mật khẩu mới nếu có
     if ($request->filled('new_password')) {
         $user->password = Hash::make($validatedData['new_password']);
     }
-
     $user->save();
-
     return redirect()->route('profile')->with('success', 'Thông tin cá nhân đã được cập nhật.');
 }
-
-
-
-
-
-
-
-
-
-    
+ 
 }

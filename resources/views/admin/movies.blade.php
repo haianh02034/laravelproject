@@ -317,9 +317,9 @@
                             <th><img src="{{ asset('/images/movie/' . $movies->movie_photo) }}" alt="Ảnh phim" style="max-width: 100px; max-height: 150px;"></th>
                             <th>
                                 <div class="d-flex align-items-center list-action">
-                                <a class="badge bg-success mr-2" data-toggle="tooltip" data-placement="top" title="Edit" 
-                                    href="{{ route('movies.edit',$movies->id) }}"><i class="ri-pencil-line mr-0"></i>
-                                    </a>
+                                {{-- <a class="badge bg-success mr-2" data-toggle="tooltip" data-placement="top" title="Edit" 
+                                    {{-- href="{{ route('movies.edit',$movies->id) }}"><i class="ri-pencil-line mr-0"></i> --}}
+                                    </a> --}}
 
                                         <a class="badge bg-warning mr-2" data-toggle="tooltip" data-placement="top" title="Delete"
                                     href="{{ route('movies.destroy',$movies->id) }}"><i class="ri-delete-bin-line mr-0"></i></a>

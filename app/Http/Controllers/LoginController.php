@@ -1,25 +1,20 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Models\User;
 use Exception;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
-
 class LoginController extends Controller
 {
     public function login()
     {
         return view('auth.login');
     }
-
     public function redirectToGoogle()
     {
         return Socialite::driver('google')->redirect();
     }
-
     public function handleGoogleCallback()
     {
         $user = Socialite::driver('google')->stateless()->user();
@@ -37,9 +32,7 @@ class LoginController extends Controller
             $newUser->email_verified_at = now();
             $newUser->avatar = $user->getAvatar();
             $newUser->save();
-
             Auth::login($newUser);
-
             return redirect()->intended('index');
         }
     }

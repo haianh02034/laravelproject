@@ -306,7 +306,7 @@
 
 {{-- hienthiphim --}}
 
-					{{-- <div class="item vhny-grid">
+					<div class="item vhny-grid">
 						<div class="box16 mb-0">
 							<figure>
 								<img class="img-fluid" src="assets/images/commando3.png" alt="">
@@ -369,7 +369,7 @@
 							</div>
 							<!-- modal end -->
 						</div>
-					</div> --}}
+					</div>
 
 
 
