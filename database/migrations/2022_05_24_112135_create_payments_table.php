@@ -14,13 +14,13 @@ return new class extends Migration
         Schema::create('payments', function (Blueprint $table) {
             $table->increments('id');
             
-            $table->integer('booking_id')->unsigned();
+            // $table->integer('booking_id')->unsigned();
             $table->decimal('amount', 10, 2);
             $table->dateTime('payment_date');
             $table->string('payment_method');
             $table->timestamps();
 
-            $table->foreign('booking_id')->references('id')->on('bookings');
+            // $table->foreign('booking_id')->references('id')->on('bookings');
         });
     }
 

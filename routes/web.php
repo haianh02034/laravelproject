@@ -124,6 +124,14 @@ Route::get('/admin/master', function () {
 });
 
 
+//ticket booking
+
+use App\Http\Controllers\BookingController;
+
+Route::get('/ticket-booking', [BookingController::class, 'index'])->name('ticket-booking');
+
+
+
 
 
 

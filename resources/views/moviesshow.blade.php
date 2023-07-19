@@ -306,7 +306,7 @@
 
 {{-- hienthiphim --}}
 
-					<div class="item vhny-grid">
+					{{-- <div class="item vhny-grid">
 						<div class="box16 mb-0">
 							<figure>
 								<img class="img-fluid" src="assets/images/commando3.png" alt="">
@@ -369,22 +369,26 @@
 							</div>
 							<!-- modal end -->
 						</div>
-					</div>
+					</div> --}}
 
 
 
-
+{{-- add film --}}
+@php
+$movies = DB::table('movies')->get();
+@endphp
+@foreach($movies as $key => $movie)
 					<div class="item vhny-grid">
+						
+						
 						<div class="box16 mb-0">
 							<figure>
-								<img class="img-fluid" src="assets/images/m3.jpg" alt="">
+								<img src="{{ asset('/images/movie/' . $movie->movie_photo) }}" alt="Ảnh phim">
 							</figure>
 							<a href=".Knivesout" data-toggle="modal">
 								<div class="box-content">
-									<h3 class="title">Knives Out</h3>
-									<h4> <span class="post"><span class="fa fa-clock-o"> </span> 2 Hr 10min
-
-										</span>
+									<h3 class="title">{{ $movie->title }}</h3>
+									<h4> <span class="post"><span class="fa fa-clock-o"> </span>{{ $movie->time }}</span>
 
 										<span class="post fa fa-heart text-right"></span>
 									</h4>
@@ -428,17 +432,42 @@
 											</p>
 										</div>
 										<div class="bookbtn">
-											<button type="button" class="btn btn-success"
-												onclick="location.href='ticket-booking.html';">Book</button>
+											<a href="{{ route('ticket-booking', ['movie_id' => $movie->id]) }}" class="btn btn-success book-btn">Book</a>
 										</div>
 									</div>
 								</div>
 							</div>
+						
 							<!-- modal end -->
+<!-- Đoạn mã JavaScript -->
+{{-- <script>
+	function redirectToTicketBooking(title) {
+		window.location.href = "{{ route('ticket-booking') }}" + "?movie_title=" + encodeURIComponent(title);
+	}
+
+	const bookButtons = document.querySelectorAll('.book-btn');
+	bookButtons.forEach((button) => {
+		button.addEventListener('click', (event) => {
+			const movieTitle = event.currentTarget.getAttribute('data-title');
+			redirectToTicketBooking(movieTitle);
+		});
+	});
+</script> --}}
+
 
 						</div>
+						
 					</div>
-					<div class="item vhny-grid">
+					@endforeach
+				</div>
+				
+			
+		
+		
+		
+					
+					{{-- end add film --}}
+					{{-- <div class="item vhny-grid">
 						<div class="box16 mb-0">
 							<figure>
 								<img class="img-fluid" src="assets/images/bharat1.png" alt="">
@@ -500,8 +529,8 @@
 							</div>
 							<!-- modal end -->
 						</div>
-					</div>
-					<div class="item vhny-grid">
+					</div> --}}
+					{{-- <div class="item vhny-grid">
 						<div class="box16 mb-0">
 							<figure>
 								<img class="img-fluid" src="assets/images/m5.jpg" alt="">
@@ -570,9 +599,12 @@
 							<!-- modal end -->
 
 						</div>
-					</div>
-				</div>
+					</div> --}}
+				{{-- </div> --}}
 				<!-- ***********************************Adults Section ************************************** -->
+	
+
+
 				<div class="w3l-title-grids">
 					<div class="headerhny-left">
 						<h3 class="hny-title">Adults</h3>
