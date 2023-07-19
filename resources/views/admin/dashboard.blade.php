@@ -4,6 +4,7 @@
     <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <title>Cinema A | Admin</title>
+      <base href="{{asset('')}}">
       
       <!-- Favicon -->
       <link rel="shortcut icon" href="{{ asset('adn/images/favicon.png') }}" type="image/x-icon">

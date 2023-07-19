@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <title>SDN | Admin</title>
+      <title>Cinema A</title>
+      <base href="{{asset('')}}">
       
       <!-- Favicon -->
       <link rel="shortcut icon" href="{{ asset('images/favicon.png') }}" type="image/x-icon">
@@ -28,7 +29,7 @@
       <div class="iq-sidebar  sidebar-default ">
           <div class="iq-sidebar-logo d-flex align-items-center justify-content-between">
               <a  href="{{ url('admin-dashboard') }}" class="header-logo">
-                  <img src="images/favicon.png"  alt="Favicon"  class="img-fluid rounded-normal light-logo" alt="logo"><h5 class="logo-title light-logo ml-3">SDN Hotel</h5>
+                  <img src="images/favicon.png"  alt="Favicon"  class="img-fluid rounded-normal light-logo" alt="logo"><h5 class="logo-title light-logo ml-3">Cinema A</h5>
               </a>
               <div class="iq-menu-bt-sidebar ml-0">
                   <i class="las la-bars wrapper-menu"></i>
