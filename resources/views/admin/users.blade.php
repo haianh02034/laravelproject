@@ -302,12 +302,12 @@
                             <td> $users->created_at->format('d F Y, H:i:s') </td>
                             <td>
                                 <div class="d-flex align-items-center list-action">
-                                <a class="badge bg-success mr-2" data-toggle="tooltip" data-placement="top" title="Edit" href="">
-                                        <i class="ri-pencil-line mr-0"></i>
+                                <a class="badge bg-success mr-2" data-toggle="tooltip" data-placement="top" title="Edit" 
+                                    href="{{ route('users.edit',$users->id) }}"><i class="ri-pencil-line mr-0"></i>
                                     </a>
 
                                         <a class="badge bg-warning mr-2" data-toggle="tooltip" data-placement="top" title="Delete"
-                                    href=""><i class="ri-delete-bin-line mr-0"></i></a>
+                                    href="{{ route('users.destroy',$users->id) }}"><i class="ri-delete-bin-line mr-0"></i></a>
 
                                 </div>
                             </td>

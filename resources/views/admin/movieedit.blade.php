@@ -171,7 +171,7 @@
                       <i class="ri-menu-line wrapper-menu"></i>
                       <a href="../backend/index.html" class="header-logo">
                           <img src="../assets/images/logo.png" class="img-fluid rounded-normal" alt="logo">
-                          <h5 class="logo-title ml-3">SDN Hotel</h5>
+                          <h5 class="logo-title ml-3">Cinema A</h5>
                       </a>
                   </div>
                   <div class="iq-search-bar device-search">
@@ -273,59 +273,107 @@
                 <div class="card">
                     <div class="card-header d-flex justify-content-between">
                         <div class="header-title">
-                            <h4 class="card-title">Update User</h4>
+                            <h4 class="card-title">Update Movie</h4>
                         </div>
                     </div>
                     <div class="card-body">
-                    
-                    <form method="POST" action="{{ route('users.update',$user->id) }}" enctype="multipart/form-data">   
-                    @csrf
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                    <form method="POST" action="{{ route('movies.update',$movie->id) }}" enctype="multipart/form-data">   
+                        @csrf
                         <div class="row"> 
-                            <div class="col-md-12">                      
-                                <div class="form-group">
-                                    <label>Full Name *</label>
-                                    <input class="form-control" name="name" type="text" placeholder="Name" />
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                            </div>    
-                            <div class="col-md-6">
-
-                            </div> 
+                              
+                             
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label>Email *</label>
-                                    <input class="form-control" name="email" type="email" placeholder="Email" />
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                            </div>  
-                            <div class="col-md-12">
-                                
-                            </div> 
-                            <div class="col-md-12">                      
-                                <div class="form-group">
-                                    <label>Password</label>
-                                    <input class="form-control" name="password" type="password" placeholder="Password" />
+                                    <label>Title *</label>
+                                    <input class="form-control" name="title" type="text" placeholder="title" />
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>  
                             
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label>Role *</label>
-                                    <select name="role" class="selectpicker form-control" data-style="py-0" required>
-                                        <option value="user">user</option>
-                                        <option value="admin">admin</option>
-                                    </select>
+                                    <label>Category *</label>
+                                    <input class="form-control" name="category" type="text" placeholder="category" />
+                                    <div class="help-block with-errors"></div>
                                 </div>
                             </div>
-                            <div class="col-md-12">
-                                <div class="checkbox d-inline-block mb-3">
-                                    <input type="checkbox" class="checkbox-input mr-2" id="checkbox1" checked>
-                                    <label for="checkbox1">Notify User by Email</label>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Director *</label>
+                                    <input class="form-control" name="director" type="text" placeholder="Director" />
+                                    <div class="help-block with-errors"></div>
                                 </div>
-                            </div>                               
-                        </div>                         
-                        <button type="submit" class="btn btn-primary mr-2">Update User</button>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Performer *</label>
+                                    <input class="form-control" name="performer" type="text" placeholder="performer" />
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Producer *</label>
+                                    <input class="form-control" name="producer" type="text" placeholder="producer" />
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Release year *</label>
+                                    <input class="form-control" name="release_year" type="text" placeholder="release year" />
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>National production *</label>
+                                    <input class="form-control" name="National_production" type="text" placeholder="National production" />
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Time *</label>
+                                    <input class="form-control" name="time" type="text" placeholder="time" />
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Movie photo *</label>
+                                    <input type="file"  name="movie_photo" type="image" placeholder="Movie photo" />
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Language *</label>
+                                    <input class="form-control" name="language" type="text" placeholder="Language" />
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                               
+                        </div>                            
+                        <button type="submit" class="btn btn-primary mr-2">Update Movie</button>
                         <button type="reset" class="btn btn-danger">Reset</button>
                     </form>
 

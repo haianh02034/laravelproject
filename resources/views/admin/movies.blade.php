@@ -275,7 +275,7 @@
                         <th class="mb-0">A user dashboard lets you easily gather and visualize customer data from optimizing <br>
                          the user experience, ensuring user retention.include('errors.note') </th>  
                     </div>
-                    <a href="{{ url('admin/movies') }}" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Add Movie</a>
+                    <a href="{{ url('admin/movieadd') }}" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Add Movie</a>
                 </div>
             </div>
             <div class="col-lg-12">
@@ -284,15 +284,15 @@
                     <thead class="bg-white text-uppercase">
                         <tr class="ligth ligth-data">
                             <th>ID</th>
-                            <th>Tên phim</th>
-                            <th>Thể loại</th>
-                            <th>Đạo diễn</th>
-                            <th>Diễn viên</th>
-                            <th>Nhà sản xuất</th>
-                            <th>Năm phát hành</th>
-                            <th>Sản xuất quốc gia</th>
-                            <th>Thời lượng</th>
-                            <th>Hình Ảnh</th>
+                            <th>Title</th>
+                            <th>Category</th>
+                            <th>Director</th>
+                            <th>Performer</th>
+                            <th>Producer</th>
+                            <th>Release year</th>
+                            <th>National production</th>
+                            <th>Time</th>
+                            <th>Photo</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -312,19 +312,20 @@
                             <th>{{ $movies->release_year }}</th>
                             <th>{{ $movies->National_production }}</th>
                             <th>{{ $movies->time }}</th>
-                            @endif
+                            
                             <th><img src=" asset($movie->movie_photo) }}" alt="Ảnh phim"></th>
                             <th>
                                 <div class="d-flex align-items-center list-action">
-                                <a class="badge bg-success mr-2" data-toggle="tooltip" data-placement="top" title="Edit" href="">
-                                        <i class="ri-pencil-line mr-0"></i>
+                                <a class="badge bg-success mr-2" data-toggle="tooltip" data-placement="top" title="Edit" 
+                                    href="{{ route('movies.edit',$movies->id) }}"><i class="ri-pencil-line mr-0"></i>
                                     </a>
 
                                         <a class="badge bg-warning mr-2" data-toggle="tooltip" data-placement="top" title="Delete"
-                                    href=""><i class="ri-delete-bin-line mr-0"></i></a>
+                                    href="{{ route('movies.destroy',$movies->id) }}"><i class="ri-delete-bin-line mr-0"></i></a>
 
                                 </div>
                             </th>
+                            @endif
                         </tr>
                         @endforeach
                     </tbody>

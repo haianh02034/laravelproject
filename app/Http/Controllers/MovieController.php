@@ -67,7 +67,7 @@ class MovieController extends Controller
             $newMovie->movie_photo = $fileName;
             $newMovie->save();
             return redirect()->route('admin.movies')
-                ->with('success', 'Product created successfully.');
+                ->with('success', 'Movie created successfully.');
         }
     }
 
@@ -80,6 +80,59 @@ class MovieController extends Controller
         }
         $movie->delete();
         return redirect()->route('admin.movies')
-            ->with('success', 'Product deleted successfully');
+            ->with('success', 'Movie deleted successfully');
+    }
+
+    public function edit($id)
+    {
+        $movie = Movie::find($id);
+        return view('admin.movieedit', ['movie' => $movie]);
+    }
+
+    public function update(Request $request, $id)
+    {
+        if ($request->isMethod('POST')) {
+            $validator = Validator::make($request->all(), [
+                'title' => 'required',
+                'category' => 'required',
+                'producer' => 'required'
+            ]);
+            if ($validator->fails()) {
+                return redirect()->back()
+                    ->withErrors($validator)
+                    ->withInput();
+            }
+            $fileName="";
+            if ($request->hasFile('movie_photo')) {
+                $file = $request->file('movie_photo');
+                $path = public_path('image/movie');
+                $fileName = time() . '_' . $file->getClientOriginalName();
+                $file->move($path, $fileName);
+            }
+            $Movie = Movie::find($id);
+            if ($Movie != null) {  
+                $Movie->title = $request->title;
+                $Movie->category = $request->category;
+                $Movie->director = $request->director;
+                $Movie->performer = $request->performer;
+                $Movie->producer = $request->producer;
+                $Movie->release_year = $request->release_year;
+                $Movie->National_production = $request->National_production;
+                $Movie->time = $request->time;
+                $Movie->language = $request->language; 
+                if ($fileName) {
+                    $Movie->image = $fileName;
+                }
+                
+                $Movie->save();
+                return redirect()->route('admin.movies')
+                ->with('success', 'Movie updated successfully');
+            } 
+            else
+            {
+                return redirect()->route('admin.movies')
+                ->with('Error', 'Movie not update');
+            }         
+        }       
     }
 }
