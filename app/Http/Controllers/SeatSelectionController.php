@@ -21,21 +21,21 @@ class SeatSelectionController extends Controller
     }
     // Trong SeatSelectionController
 
-// public function showSeatSelection($movie_id, $selected_time, $movie_title) {
-//     // Kiểm tra xem $selected_time có giá trị không
-//     if (isset($selected_time)) {
-//         // Biến $selected_time đã được khai báo và có giá trị
-//         return view('seat_selection')->with([
-//             'movie_id' => $movie_id,
-//             'selected_time' => $selected_time,
-//             'movie_title' => $movie_title,
-//         ]);
-//     } else {
-//         // Nếu $selected_time không có giá trị, xử lý lỗi hoặc thông báo sai dữ liệu tùy theo logic của bạn
-//         // Ví dụ:
-//         return redirect()->back()->with('error', 'Selected time is missing.');
-//     }
-// }
+public function showSeatSelection($movie_id, $selected_time, $movie_title) {
+    // Kiểm tra xem $selected_time có giá trị không
+    if (isset($selected_time)) {
+        // Biến $selected_time đã được khai báo và có giá trị
+        return view('seat_selection')->with([
+            'movie_id' => $movie_id,
+            'selected_time' => $selected_time,
+            'movie_title' => $movie_title,
+        ]);
+    } else {
+        // Nếu $selected_time không có giá trị, xử lý lỗi hoặc thông báo sai dữ liệu tùy theo logic của bạn
+        // Ví dụ:
+        return redirect()->back()->with('error', 'Selected time is missing.');
+    }
+}
 public function showMovieDetails($movieId) {
     // Retrieve movie details and selected time
     $movie = Movie::find($movieId);

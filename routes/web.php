@@ -51,6 +51,16 @@ Route::get('/admin/dashboard', function () {
 Route::get('/admin/users', function () {
     return view('admin.users');
 });
+Route::get('seat_sel.html',function(){
+    return view('seat_sel');
+});
+Route::get('payment.html',function(){
+    return view('payment');
+});
+Route::get('payment.html',function(){
+    return view('payment');
+});
+
 Route::get('/admin/users', [AdminController::class, 'ShowUser'])->name('ShowUser');
 Route::post('/admin/users', 'AdminController@users')->name('admin.users');
 Route::get('/admin/movies', function () {
@@ -95,3 +105,5 @@ use App\Http\Controllers\SeatSelectionController;
 Route::get('/seat_sel', [SeatSelectionController::class, 'index'])->name('seat-selection');
 // Route::get('/seat-selection/{movie_id}/{selected_time}/{movie_title}', [SeatSelectionController::class, 'showSeatSelection'])->name('seat-selection');
 
+Route::get('/movies/{id}/edit', 'MovieController@edit')->name('movies.edit');
+Route::get('/movies', 'MovieController@index');
