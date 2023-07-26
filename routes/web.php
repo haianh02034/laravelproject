@@ -8,6 +8,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MovieController;
 use App\Http\Controllers\BookingController;
+use App\Http\Controllers\SeatSelectionController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,9 +34,8 @@ Route::get('/Contact_Us.html', function () {
 Route::get('/about.html', function () {
     return view('about');
 });
-Route::get('/ticket-booking.html', function () {
-    return view('ticket-booking');
-});
+Route::get('/ticket-booking/{movie_id}', [BookingController::class, 'index'])->name('ticket-booking');
+
 Route::get('/seat_sel.html', function () {
     return view('seat_sel');
 });
@@ -55,6 +55,16 @@ Route::get('/admin/dashboard', function () {
 Route::get('/admin/users', function () {
     return view('admin.users');
 });
+Route::get('seat_sel.html',function(){
+    return view('seat_sel');
+});
+Route::get('payment.html',function(){
+    return view('payment');
+});
+Route::get('payment.html',function(){
+    return view('payment');
+});
+
 
 Route::get('/admin/users', [AdminController::class, 'ShowUser'])->name('ShowUser');
 Route::post('/admin/users', 'AdminController@users')->name('admin.users');
@@ -91,11 +101,8 @@ Route::get('/admin/orderadd', function () {
 Route::get('/admin/master', function () {
     return view('admin.master');
 });
-
-// =======================================================================================================
-
-Route::get('/ticket-booking', [BookingController::class, 'index'])->name('ticket-booking');
-Route::get('/seat_sel', [BookingController::class, 'seatSelection'])->name('seat_sel');
+// Route::get('/ticket-booking', [BookingController::class, 'index'])->name('ticket-booking');
+// Route::get('/seat_sel', [BookingController::class, 'seatSelection'])->name('seat_sel');
 
     Route::get('/sign_in.html', [AuthController::class, 'getLogin'])->name('login');
      Route::post('/sign_in.html', [AuthController::class, 'postLogin']); 
@@ -109,8 +116,31 @@ Route::get('/auth/google/callback', [AuthController::class, 'handleGoogleCallbac
 // Route hiển thị và cập nhật thông tin cá nhân
 Route::get('/profile', [AuthController::class, 'showProfile'])->name('profile');
 Route::post('/profile/update', [AuthController::class, 'updateProfile'])->name('profile.update');
-use App\Http\Controllers\SeatSelectionController;
 // Định nghĩa route cho trang seat_sel.html với tên là "seat-selection"
-Route::get('/seat_sel', [SeatSelectionController::class, 'index'])->name('seat-selection');
 // Route::get('/seat-selection/{movie_id}/{selected_time}/{movie_title}', [SeatSelectionController::class, 'showSeatSelection'])->name('seat-selection');
+
+Route::get('/movies/{id}/edit', 'MovieController@edit')->name('movies.edit');
+Route::get('/movies', 'MovieController@index');
+///
+Route::get('/movies/{id}/showtimes', [MovieController::class, 'showtimes']);
+Route::get('/ticket-booking', [BookingController::class, 'index'])->name('ticket-booking');
+// Route::get('/seat-selection/{movie_title}', [SeatSelectionController::class, 'index'])->name('seat-selection');
+
+Route::post('/movies/search', [MovieController::class, 'search'])->name('movies.search');
+
+// web.php
+
+
+
+// Define the route for "seat_sel"
+// Define the route and associate it with the controller method
+use Illuminate\Http\Request;
+
+// Define the route to display the ticket booking form
+Route::get('/ticket-booking', function () {
+    return view('ticket-booking');
+});
+
+Route::post('/seat-selection', [SeatSelectionController::class, 'handleSeatSelection'])->name('seatSelection');
+
 

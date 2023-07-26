@@ -7,9 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Seat extends Model
 {
-    use HasFactory;
-    protected $fillable = [
-        'auditorium_id',
-        'seat_number',
-    ];
+    protected $fillable = ['row', 'column', 'is_booked'];
+
+    // Mô tả mối quan hệ giữa Seat và Auditorium
+    public function auditorium()
+    {
+        return $this->belongsTo(Auditorium::class);
+    }
 }

@@ -20,7 +20,6 @@
 				<h1><a class="navbar-brand" href="index.html"><span class="fa fa-play icon-log"
 							aria-hidden="true"></span>
 							Cinema A</a></h1>
-				
 				<button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
 					data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
 					aria-label="Toggle navigation">
@@ -28,7 +27,6 @@
 					<span class="fa icon-expand fa-bars"></span>
 					<span class="fa icon-close fa-times"></span>
 				</button>
-
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav ml-auto">
 						<li class="nav-item active">
@@ -59,29 +57,7 @@
 								<li><a class="nav-link" href="sign_in.html"><i class="fa fa-user-circle-o"></i></a></li>
 							@endif
 						</li>
-						
-
-
-
-
-						{{-- @if (Auth::check())
-						<li class="dropdown" list-style-type: none;>
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-								{{ Auth::user()->full_name }}
-								<span class="caret"></span>
-							</a>
-							<ul class="dropdown-menu">
-								<li><a href="#">Thông tin tài khoản</a></li>
-								<li><a href="{{asset('logout')}}">Logout</a></li>
-							</ul>
-						</li>
-					@else
-						<li><a class="nav-link" href="sign_in.html"><i class="fa fa-user-circle-o"></i></a></li>
-					@endif --}}
-
-
 					</ul>
-
 					<!--/search-right-->
 					<!--/search-right-->
 					<div class="search-right">
@@ -90,31 +66,15 @@
 						<!-- search popup -->
 						<div id="search" class="pop-overlay">
 							<div class="popup">
-								<form action="#" method="post" class="search-box">
-									<input type="search" placeholder="Search your Keyword" name="search"
-										required="required" autofocus="">
-									<button type="submit" class="btn"><span class="fa fa-search"
-											aria-hidden="true"></span></button>
-								</form>
+								<form action="{{ route('movies.search') }}" method="post" class="search-box">
+									@csrf 
+									<input type="search" placeholder="Search your Keyword" name="search" required="required" autofocus="">
+									<button type="submit" class="btn"><span class="fa fa-search" aria-hidden="true"></span></button>
+								  </form>								  
 								<div class="browse-items">
 									<h3 class="hny-title two mt-md-5 mt-4">Browse all:</h3>
 									<ul class="search-items">
-										<li><a href="movies.html">Action</a></li>
-										<li><a href="movies.html">Drama</a></li>
-										<li><a href="movies.html">Family</a></li>
-										<li><a href="movies.html">Thriller</a></li>
-										<li><a href="movies.html">Commedy</a></li>
-										<li><a href="movies.html">Romantic</a></li>
-										<li><a href="movies.html">Tv-Series</a></li>
-										<li><a href="movies.html">Horror</a></li>
-										<li><a href="movies.html">Action</a></li>
-										<li><a href="movies.html">Drama</a></li>
-										<li><a href="movies.html">Family</a></li>
-										<li><a href="movies.html">Thriller</a></li>
-										<li><a href="movies.html">Commedy</a></li>
-										<li><a href="movies.html">Romantic</a></li>
-										<li><a href="movies.html">Tv-Series</a></li>
-										<li><a href="movies.html">Horror</a></li>
+										<li>Action</a></li>
 									</ul>
 								</div>
 							</div>
@@ -122,17 +82,9 @@
 						</div>
 						<!-- /search popup -->
 						<!--/search-right-->
-
 					</div>
 					<div class="Login_SignUp" id="login"
 						style="font-size: 2rem ; display: inline-block; position: relative;">
-						<!-- <li class="nav-item"> -->
-
-						
-						{{-- ????? --}}
-
-
-						<!-- </li> -->
 					</div>
 				</div>
 				<!-- toggle switch for light and dark theme -->

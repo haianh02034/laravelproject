@@ -274,7 +274,11 @@
                                 <div class="d-flex align-items-center list-action">
                                 <a class="badge bg-success mr-2" data-toggle="tooltip" data-placement="top" title="Edit" 
                                     href="{{ route('movies.edit',$movies->id) }}"><i class="ri-pencil-line mr-0"></i>
+<<<<<<< HEAD
                                     </a> 
+=======
+                                    </a>
+>>>>>>> 85f303717a9dc15a7100e25d2fb967a217443c68
 
                                         <a class="badge bg-warning mr-2" data-toggle="tooltip" data-placement="top" title="Delete"
                                     href="{{ route('movies.destroy',$movies->id) }}"><i class="ri-delete-bin-line mr-0"></i></a>
