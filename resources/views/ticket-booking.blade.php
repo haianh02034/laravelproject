@@ -4,16 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ticket Booking</title>
-  <link rel="stylesheet" type="text/css" href="assets/css/style-starter.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/style-starter.css">
   <link rel="stylesheet" href="https://npmcdn.com/flickity@2/dist/flickity.css">
-  <link rel="stylesheet" type="text/css" href="assets/css/progress.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/progress.css">
 
-  <link rel="stylesheet" type="text/css" href="assets/css/ticket-booking.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/ticket-booking.css">
 
   <!-- ..............For progress-bar............... -->
-  <link rel="stylesheet" type="text/css" href="assets/css/e-ticket.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/e-ticket.css">
 
-  <link rel="stylesheet" type="text/css" href="assets/css/payment.css" />
+  <link rel="stylesheet" type="text/css" href="../assets/css/payment.css" />
   <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700" rel="stylesheet">
 </head>
 <body>
@@ -64,11 +64,11 @@
 					</ul>
 					<!--/search-right-->
 					<!--/search-right-->
-					<div class="search-right">
+					{{-- <div class="search-right"> --}}
 						{{-- <a href="#search" class="btn search-hny mr-lg-3 mt-lg-0 mt-4" title="search">Search <span
 								class="fa fa-search ml-3" aria-hidden="true"></span></a> --}}
 						<!-- search popup -->
-						<div id="search" class="pop-overlay">
+						{{-- <div id="search" class="pop-overlay">
 							<div class="popup">
 								{{-- <form action="#" method="post" class="search-box">
 									<input type="search" placeholder="Search your Keyword" name="search"
@@ -76,7 +76,7 @@
 									<button type="submit" class="btn"><span class="fa fa-search"
 											aria-hidden="true"></span></button>
 								</form> --}}
-								<div class="browse-items">
+								{{-- <div class="browse-items">
 									<h3 class="hny-title two mt-md-5 mt-4">Browse all:</h3>
 									<ul class="search-items">
 										<li><a href="movies.html">Action</a></li>
@@ -99,10 +99,10 @@
 								</div>
 							</div>
 							<a class="close" href="#close">×</a>
-						</div>
+						</div> --}}
 						<!-- /search popup -->
 						<!--/search-right-->
-					</div>
+					{{-- </div> --}}
 					<div class="Login_SignUp" id="login"
 						style="font-size: 2rem ; display: inline-block; position: relative;">
 					</div>

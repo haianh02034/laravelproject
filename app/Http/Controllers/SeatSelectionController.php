@@ -7,6 +7,16 @@ use App\Models\Movie;
 use App\Models\Seat;
 class SeatSelectionController extends Controller
 {
+    // public function showSeatSelection(Request $request)
+    // {
+    //     // Lấy thông tin phim từ URL (đảm bảo rằng bạn đã truyền movie_id qua URL)
+    //     $movie_id = $request->input('movie_id');
+    //     $movie = Movie::find($movie_id);
+    
+    //     // Truyền thông tin phim đến trang seat-selection
+    //     return view('seat-selection', ['movie' => $movie]);
+    // }
+    
     public function handleSeatSelection(Request $request)
     {
         // Retrieve the selected values from the form
@@ -15,18 +25,19 @@ class SeatSelectionController extends Controller
         $selectedScreen = $request->input('selectedScreen');
     
         // ... (Kiểm tra và xử lý lỗi tương tự như trong câu trả lời trước)
+      
     
         // Truyền các biến vào view khi redirect hoặc render view
         return view('seat-selection', compact('selectedDate', 'selectedTime', 'selectedScreen'));
     }
-    public function showSeatSelection()
-    {
-        // Lấy thông tin phòng chiếu và các ghế đã đặt từ database
-        // $auditorium = ...; // Lấy thông tin phòng chiếu từ database (nếu cần)
-        $bookedSeats = Seat::where('is_booked', 1)->get(); // Lấy danh sách các ghế đã đặt từ database
+    // public function showSeatSelection()
+    // {
+    //     // Lấy thông tin phòng chiếu và các ghế đã đặt từ database
+    //     // $auditorium = ...; // Lấy thông tin phòng chiếu từ database (nếu cần)
+    //     $bookedSeats = Seat::where('is_booked', 1)->get(); // Lấy danh sách các ghế đã đặt từ database
 
-        return view('seat-selection', compact('auditorium', 'bookedSeats'));
-    }
+    //     return view('seat-selection', compact('auditorium', 'bookedSeats'));
+    // }
 
     public function SeatSelection(Request $request)
     {
@@ -72,6 +83,6 @@ class SeatSelectionController extends Controller
         return view('booking-confirmation', compact('movieTitle', 'showTime', 'numTickets', 'totalAmount'));
         return view('booking-confirmation', ['bookedSeats' => $bookedSeats]);
     }
-
+  
 
 }

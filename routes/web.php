@@ -34,9 +34,8 @@ Route::get('/Contact_Us.html', function () {
 Route::get('/about.html', function () {
     return view('about');
 });
-Route::get('/ticket-booking.html', function () {
-    return view('ticket-booking');
-});
+Route::get('/ticket-booking/{movie_id}', [BookingController::class, 'index'])->name('ticket-booking');
+
 Route::get('/seat_sel.html', function () {
     return view('seat_sel');
 });
@@ -127,3 +126,5 @@ Route::get('/ticket-booking', function () {
 });
 
 Route::post('/seat-selection', [SeatSelectionController::class, 'handleSeatSelection'])->name('seatSelection');
+
+

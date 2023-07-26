@@ -154,5 +154,7 @@ public function search(Request $request)
         // Pass the search results to the view
         return view('search_results', compact('movies'));
     }
+
+    
 }
 

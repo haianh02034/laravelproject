@@ -70,10 +70,8 @@
 				<h1>Sign in</h1>
 				
 				<div class="social-container">
-					<a href="#" class="social" style="color: var(--theme-title);"><i class="fab fa-facebook-f"></i></a>
 					<a href="{{url('auth/google')}}" class="social" style="color: var(--theme-title);"><i class="fab fa-google-plus-g"></i></a>
 					{{-- <a href="{{url('auth/google')}}" class="btn btn-secondary">{{__('Google Sign in')}}</a> --}}
-					<a href="#" class="social" style="color: var(--theme-title);"><i class="fab fa-linkedin-in"></i></a>
 				</div>
 				<span>or use your account</span>
 				<input name="sign-in-email" type="email" placeholder="Email" />

@@ -192,13 +192,18 @@
                                 <li>Selected Seats</li>
                             </ul>
                             <ul class="book-right">
-                                <li>: </li>
+                                {{-- <li>: @if ($movie)
+                                <h3>{{ $movie->title }}</h3>
+                            @else
+                                <p>No movie information available.</p>
+                            @endif</li> --}}
                                 <li>: <span id="selected-screen"></span>{{ $selectedScreen }}</li>
                                 <li>: <span id="selected-date"></span>{{ $selectedDate }}</li>
                                 <li>: <span id="selected-time"></span>{{ $selectedTime }}</li>
                                 <li>: <span id="counter">0</span></li>
                                 <li>: <b><i></i><span id="total">0</span>$</b></li>
 
+                                
 
 
                               
@@ -355,7 +360,7 @@
       </fieldset>
 
       <a href="payment.html" ><input  type="button" name="next-step" class="next-step" value="Proceed to Payment" /></a>
-      <a href="ticket-booking.html"><input type="button" name="previous-step" class="previous-step" value="Back" /></a>
+      <a href="index.html"><input type="button" name="previous-step" class="previous-step" value="Back" /></a>
       
         
               
