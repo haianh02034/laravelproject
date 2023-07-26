@@ -10,7 +10,7 @@ class MovieController extends Controller
     public function ShowMovie()
     {
         $movie = Movie::latest()->paginate(9);
-        return view('admin.movieadd', compact('movie'))
+        return view('admin.movies', compact('movie'))
             ->with('i', (request()->input('page', 1) - 1) * 9);
     }
     public function add()
@@ -115,7 +115,7 @@ class MovieController extends Controller
                 $Movie->time = $request->time;
                 $Movie->language = $request->language; 
                 if ($fileName) {
-                    $Movie->image = $fileName;
+                    $Movie->movie_photo = $fileName;
                 }
                 
                 $Movie->save();
@@ -129,4 +129,12 @@ class MovieController extends Controller
             }         
         }       
     }
+
+    public function show($id)
+    {
+        $movie = Movie::find($id);
+        return view('admin.movieshow', ['movie' => $movie]);
+    }
+
+    
 }
