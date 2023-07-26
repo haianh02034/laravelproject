@@ -12,14 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('seats', function (Blueprint $table) {
-            $table->increments('id');
-            
-            $table->integer('auditorium_id')->unsigned();
-            
-            $table->string('seat_number');
+            $table->increments('id');      
+            // $table->integer('auditorium_id')->unsigned();
+            $table->unsignedInteger('row');
+            $table->unsignedInteger('column');
+            $table->boolean('is_booked')->default(false);
+            // $table->foreign('auditorium_id')->references('id')->on('auditoriums');
             $table->timestamps();
-
-            $table->foreign('auditorium_id')->references('id')->on('auditoriums');
         });
     }
 

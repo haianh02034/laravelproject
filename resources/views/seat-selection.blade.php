@@ -46,6 +46,7 @@
         }
      </style>
         <link rel="stylesheet" type="text/css" href="assets/css/style-starter.css">
+        
 
       
     </head>
@@ -172,7 +173,7 @@
                 </ul> -->
                 <br>
     <fieldset>
-
+<form>
         <div  style="  box-shadow: 0 14px 12px 0 var(--theme-border), 0 10px 50px 0 var(--theme-border); width: 800px; height: 550px; display: block; margin-left: auto; margin-right: auto;">
             <div class="content">
                <h3 style="text-align: center;margin-bottom:1dvb;" >Seat Selection</h3>
@@ -184,16 +185,23 @@
                         <div class="booking-details">
                             <ul class="book-left">
                                 <li>Movie </li>
+                                <li>Selected Screen</li>
                                 <li>Time </li>
                                 <li>Tickets</li>
                                 <li>Total</li>
                                 <li>Selected Seats</li>
                             </ul>
                             <ul class="book-right">
-                                <li>: Commando 3</li>
-                                <li>: April 12, 22:00</li>
+                                <li>: </li>
+                                <li>: <span id="selected-screen"></span>{{ $selectedScreen }}</li>
+                                <li>: <span id="selected-date"></span>{{ $selectedDate }}</li>
+                                <li>: <span id="selected-time"></span>{{ $selectedTime }}</li>
                                 <li>: <span id="counter">0</span></li>
-                                <li>: <b><i>RS.</i><span id="total">0</span></b></li>
+                                <li>: <b><i></i><span id="total">0</span>$</b></li>
+
+
+
+                              
                             </ul>
                             <div class="clear"></div>
                             <ul id="selected-seats" class="scrollbar scrollbar1"></ul>
@@ -201,9 +209,9 @@
                                     
                             <div id="legend"></div>
                         </div>
-            
+                        
                         <script type="text/javascript">
-                            var price = 110; //price
+                            var price = 40; //price
                             $(document).ready(function () {
                                 var $cart = $('#selected-seats'), //Sitting Area
                                     $counter = $('#counter'), //Votes
@@ -265,11 +273,67 @@
                                     }
                                 });
                                 //sold seat
-                                sc.get(['1_2', '4_4', '4_5', '6_6', '6_7', '8_5', '8_6', '8_7', '8_8', '10_1', '10_2']).status(
+                                sc.get(['1_3', '4_4', '4_5', '6_6', '6_7', '8_5', '8_6', '8_7', '8_8', '10_1', '10_2']).status(
                                     'unavailable');
             
                             });
+                            function generateSeatMap(seats) {
+                var $seatMap = $('#seat-map');
+                var rowCount = 10; // Set the number of rows for your seat map
+                var columnCount = 10; // Set the number of columns for your seat map
+
+                for (var row = 1; row <= rowCount; row++) {
+                    var rowElem = $('<div class="seat-row"></div>');
+                    for (var column = 1; column <= columnCount; column++) {
+                        var seatId = row + '_' + column;
+                        var seatClass = 'seat';
+                        var isBooked = seats.some(seat => seat.row == row && seat.column == column && seat.is_booked);
+
+                        if (isBooked) {
+                            seatClass += ' booked';
+                        } else {
+                            seatClass += ' available';
+                        }
+
+                        $('<div class="' + seatClass + '">' + row + '-' + column + '</div>')
+                            .attr('data-seat-id', seatId)
+                            .appendTo(rowElem);
+                    }
+                    rowElem.appendTo($seatMap);
+                }
+
+                // Add click event for selecting seats
+                $seatMap.on('click', '.available', function () {
+                    var seatId = $(this).data('seat-id');
+                    var seatIndex = selectedSeats.indexOf(seatId);
+                    if (seatIndex > -1) {
+                        // Seat is already selected, so remove it
+                        selectedSeats.splice(seatIndex, 1);
+                    } else {
+                        // Seat is not selected, so add it
+                        selectedSeats.push(seatId);
+                    }
+                    updateSelectedSeats();
+                });
+
+                updateSelectedSeats();
+            }
+
+            function updateSelectedSeats() {
+                var $selectedSeats = $('#selected-seats');
+                $selectedSeats.empty();
+                selectedSeats.forEach(seatId => {
+                    $selectedSeats.append('<li>' + seatId + '</li>');
+                });
+                $('#counter').text(selectedSeats.length);
+                $('#total').text(selectedSeats.length * price);
+            }
+        
+
+
                             //sum total money
+
+
                             function recalculateTotal(sc) {
                                 var total = 0;
                                 sc.find('selected').each(function () {
@@ -287,19 +351,30 @@
 
         </div>
         <br>
-        
+    </form>
       </fieldset>
 
       <a href="payment.html" ><input  type="button" name="next-step" class="next-step" value="Proceed to Payment" /></a>
       <a href="ticket-booking.html"><input type="button" name="previous-step" class="previous-step" value="Back" /></a>
       
         
-              </form>
+              
             </div>
           </div>
         </div>
     </div>
-
+    <script>
+        // Lấy thông tin từ URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const selectedDate = urlParams.get("date");
+        const selectedTime = urlParams.get("time");
+        const selectedScreen = urlParams.get("screen");
+    
+        // Cập nhật thông tin đã chọn lên trang
+        document.getElementById("selected-date").textContent = selectedDate;
+        document.getElementById("selected-time").textContent = selectedTime;
+        document.getElementById("selected-screen").textContent = selectedScreen;
+      </script>
     
 </body>
 </html>

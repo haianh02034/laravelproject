@@ -129,142 +129,261 @@
     <div class="row">
       <div class="col">
         <div class="px-0 pt-4 pb-0 mt-3 mb-3">
-          <form id="form">
-            <!-- <ul id="progressbar" class="progressbar-class">
-              <li class="active" id="step1">Show timing selection</li>
-              <li id="step2" class="not_active">Seat Selection</li>
-              <li id="step3" class="not_active">Payment</li>
-              <li id="step4" class="not_active">E-Ticket</li>
-            </ul> -->
+   
+
+          <form action="{{ route('seatSelection') }}" method="POST">
+            @csrf
             <br>
            
               <div id="screen-select-div">
-                <h2>Show time Selection</h2>
+                {{-- <h2>Show time Selection: {{ $movie->title }}</h2> --}}
                 <div class="carousel carousel-nav" data-flickity='{"contain": true, "pageDots": false }'>
-                  <div class="carousel-cell" id="1" onclick="myFunction(1)">
-                    <div class="date-numeric">13</div>
-                    <div class="date-day">Today</div>
+                  <div class="carousel-cell" id="1" onclick="myFunction(0)">
+                    <div class="date-numeric"></div>
+                    <div class="date-day"></div>
                   </div>
-
-                  <div class="carousel-cell" id="2" onclick="myFunction(2)">
-                    <div class="date-numeric">14</div>
-                    <div class="date-day">Tomorrow</div>
+                  <div class="carousel-cell" id="2" onclick="myFunction(1)">
+                    <div class="date-numeric"></div>
+                    <div class="date-day"></div>
                   </div>
-                  <div class="carousel-cell" id="3" onclick="myFunction(3)">
-                    <div class="date-numeric">15</div>
-                    <div class="date-day">Monday</div>
+                  <div class="carousel-cell" id="3" onclick="myFunction(2)">
+                    <div class="date-numeric"></div>
+                    <div class="date-day"></div>
                   </div>
-                  <div class="carousel-cell" id="4" onclick="myFunction(4)">
-                    <div class="date-numeric">16</div>
-                    <div class="date-day">Tuesday</div>
+                  <div class="carousel-cell" id="4" onclick="myFunction(3)">
+                    <div class="date-numeric"></div>
+                    <div class="date-day"></div>
                   </div>
-                  <div class="carousel-cell" id="5" onclick="myFunction(5)">
-                    <div class="date-numeric">17</div>
-                    <div class="date-day">Wednesday</div>
-                  </div>
-                  <div class="carousel-cell" id="6" onclick="myFunction(6)">
-                    <div class="date-numeric">18</div>
-                    <div class="date-day">Thursday</div>
-                  </div>
-                  <div class="carousel-cell" id="7" onclick="myFunction(7)">
-                    <div class="date-numeric">19</div>
-                    <div class="date-day">Friday</div>
+                  <div class="carousel-cell" id="5" onclick="myFunction(4)">
+                    <div class="date-numeric"></div>
+                    <div class="date-day"></div>
                   </div>
                 </div>
+                
+                <!-- Hiển thị thông tin ngày đã chọn -->
+                <h3>Selected Date:</h3>
+                <div id="date-numeric"></div>
+              
+
+
+              <!-- Phần hiển thị màn hình và giờ -->
+             <!-- Phần hiển thị màn hình và giờ -->
                 <ul class="time-ul">
                   <li class="time-li">
-                    <div class="screens">
+                    <div class="screens" onclick="screenFunction('Screen 1')">
                       Screen 1
                     </div>
                     <div class="time-btn">
-                      <button class="screen-time" onclick="timeFunction()">
-                        1:05 PM
-                      </button>
-                      <button class="screen-time" onclick="timeFunction()">
-                        4:00 PM
-                      </button>
-                      <button class="screen-time" onclick="timeFunction()">
-                        9:00 PM
-                      </button>
+                      <button type="button" class="screen-time" onclick="timeFunction('1:05 PM')">1:05 PM</button>
+                      <button type="button" class="screen-time" onclick="timeFunction('4:00 PM')">4:00 PM</button>
+                      <button type="button" class="screen-time" onclick="timeFunction('9:00 PM')">9:00 PM</button>
                     </div>
                   </li>
                   <li class="time-li">
-                    <div class="screens">
+                    <div class="screens" onclick="screenFunction('Screen 2')">
                       Screen 2
                     </div>
                     <div class="time-btn">
-                      <button class="screen-time" onclick="timeFunction()">
-                        3:00 PM
-                      </button>
+                      <button type="button" class="screen-time" onclick="timeFunction('3:00 PM')">3:00 PM</button>
                     </div>
                   </li>
                   <li class="time-li">
-                    <div class="screens">
+                    <div type="button" class="screens" onclick="screenFunction('Screen 3')">
                       Screen 3
                     </div>
                     <div class="time-btn">
-                      <button class="screen-time" onclick="timeFunction()">
-                        9:05 AM
-                      </button>
-                      <button class="screen-time" onclick="timeFunction()">
-                        10:00 PM
-                      </button>
+                      <button type="button" class="screen-time" onclick="timeFunction('9:05 AM')">9:05 AM</button>
+                      <button type="button" class="screen-time" onclick="timeFunction('10:00 PM')">10:00 PM</button>
                     </div>
                   </li>
                   <li class="time-li">
-                    <div class="screens">
+                    <div class="screens" onclick="screenFunction('Screen 4')">
                       Screen 4
                     </div>
                     <div class="time-btn">
-                      <button class="screen-time" onclick="timeFunction()">
-                        9:05 AM
-                      </button>
-                      <button class="screen-time" onclick="timeFunction()">
-                        11:00 AM
-                      </button>
-                      <button class="screen-time" onclick="timeFunction()">
-                        3:00 PM
-                      </button>
-                      <button class="screen-time" onclick="timeFunction()">
-                        7:00 PM
-                      </button>
-                      <button class="screen-time" onclick="timeFunction()">
-                        10:00 PM
-                      </button>
-                      <button class="screen-time" onclick="timeFunction()">
-                        11:00 PM
-                      </button>
+                      <button type="button" class="screen-time" onclick="timeFunction('9:05 AM')">9:05 AM</button>
+                      <button type="button" class="screen-time" onclick="timeFunction('11:00 AM')">11:00 AM</button>
+                      <button type="button" class="screen-time" onclick="timeFunction('3:00 PM')">3:00 PM</button>
+                      <button type="button" class="screen-time" onclick="timeFunction('7:00 PM')">7:00 PM</button>
+                      <button type="button" class="screen-time" onclick="timeFunction('10:00 PM')">10:00 PM</button>
+                      <button type="button" class="screen-time" onclick="timeFunction('11:00 PM')">11:00 PM</button>
                     </div>
                   </li>
                   <li class="time-li">
-                    <div class="screens">
+                    <div class="screens" onclick="screenFunction('Screen 5')">
                       Screen 5
                     </div>
                     <div class="time-btn">
-                      <button class="screen-time" onclick="timeFunction()">
-                        9:05 AM
-                      </button>
-                      <button class="screen-time" onclick="timeFunction()">
-                        12:00 PM
-                      </button>
-                      <button class="screen-time" onclick="timeFunction()">
-                        1:00 PM
-                      </button>
-                      <button class="screen-time" onclick="timeFunction()">
-                        3:00 PM
-                      </button>
+                      <button type="button" class="screen-time" onclick="timeFunction('9:05 AM')">9:05 AM</button>
+                      <button type="button" class="screen-time" onclick="timeFunction('12:00 PM')">12:00 PM</button>
+                      <button type="button" class="screen-time" onclick="timeFunction('1:00 PM')">1:00 PM</button>
+                      <button type="button" class="screen-time" onclick="timeFunction('3:00 PM')">3:00 PM</button>
                     </div>
                   </li>
-
                 </ul>
-              </div>
-              <a href="seat_sel.html"><input id="screen-next-btn" type="button" name="next-step" class="next-step" value="Continue Booking"
-                 /></a>
+              
+                <!-- Hiển thị thông tin màn hình đã chọn -->
+                <div>
+                  <h3>Selected Screen:</h3>
+                  <div id="selected-screen"></div>
+                </div>
+                
+                <div>
+                  <h3>Selected Time:</h3>
+                  <div id="selected-time"></div>
+                </div>
+                <label for="selectedDate">Select Date:</label>
+                <input type="hidden"  name="selectedDate" id="selectedDateInput" value="">
+                <input type="hidden" name="selectedTime" id="selectedTimeInput" value="">
+                <input type="hidden" name="selectedScreen" id="selectedScreenInput" value="">
+            
+                <!-- Button to continue booking -->
+                <button type="submit">Continue Booking</button>
+        </form>
+              {{-- <a href="seat_sel.html">
+                <input id="screen-next-btn" type="button" name="next-step" class="next-step" value="Continue Booking"
+                 /></a> --}}
               
           </form>
         </div>
       </div>
     </div>
   </div>
+  <script>
+    var selectedDate = 0; // Biến lưu trữ giá trị đã chọn, ban đầu chọn là ngày hiện tại
+    updateCarouselDates();
+
+    function myFunction(selected) {
+        selectedDate = selected;
+        updateSelectedTime(); // Cập nhật thông tin thời gian đã chọn
+    }
+
+    function updateCarouselDates() {
+        // Lấy ngày hiện tại
+        var today = new Date();
+
+        // Cập nhật ngày giờ trong div carousel
+        for (var i = 1; i <= 5; i++) {
+            var carouselCell = document.getElementById(i.toString());
+            var numericElement = carouselCell.querySelector('.date-numeric');
+            var dayElement = carouselCell.querySelector('.date-day');
+
+            var futureDate = new Date(today);
+            futureDate.setDate(today.getDate() + i - 1 + selectedDate);
+            var selectedDay = futureDate.getDate();
+            var selectedDayOfWeek = getDayOfWeek(futureDate.getDay());
+
+            numericElement.textContent = selectedDay;
+            dayElement.textContent = selectedDayOfWeek;
+        }
+
+        // Cập nhật thông tin ngày đã chọn
+        updateSelectedTime();
+    }
+
+    function updateSelectedTime() {
+        // Xử lý sự kiện khi người dùng chọn ngày
+        var today = new Date();
+        var selectedDay = today.getDate() + selectedDate; // Tính ngày tương ứng với lựa chọn
+        var selectedTime = getCurrentTime();
+
+        // Cập nhật thông tin ngày giờ
+        var dateElement = document.querySelector('#date-numeric');
+        var dayElement = document.querySelector('#date-day');
+        var timeElement = document.querySelector('#current-time');
+
+        dateElement.textContent = selectedDay;
+        dayElement.textContent = getDayOfWeek(selectedDay);
+        timeElement.textContent = selectedTime;
+
+        // Cập nhật giá trị ngày đã chọn vào input field
+        // document.getElementById('selectedDateInput').value = selectedDay;
+    }
+
+    function getCurrentTime() {
+        // Hàm này trả về thời gian hiện tại với định dạng hh:mm AM/PM
+        var today = new Date();
+        var hours = today.getHours();
+        var minutes = today.getMinutes();
+        var ampm = hours >= 12 ? 'PM' : 'AM';
+        hours = hours % 12 || 12; // Định dạng giờ theo chuẩn 12 giờ
+        minutes = minutes < 10 ? '0' + minutes : minutes;
+        return hours + ':' + minutes + ' ' + ampm;
+    }
+
+    function getDayOfWeek(dayNumber) {
+        // Hàm này trả về tên ngày trong tuần tương ứng với số ngày
+        var daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        return daysOfWeek[dayNumber];
+    }
+</script>
+  
+
+  <!-- Script JavaScript cho phần đặt giờ -->
+<!-- Script JavaScript cho phần đặt giờ và màn hình -->
+<!-- Script JavaScript cho phần đặt giờ và màn hình -->
+<!-- Script JavaScript cho phần đặt giờ và màn hình -->
+<!-- Script JavaScript cho phần đặt giờ và màn hình -->
+<script>
+  var selectedTime = ""; // Biến lưu trữ giờ đã chọn, ban đầu không có giờ nào được chọn
+  var selectedScreen = ""; // Biến lưu trữ màn hình đã chọn, ban đầu không có màn hình nào được chọn
+
+  function timeFunction(time) {
+    selectedTime = time;
+    updateSelectedDateTime(); // Cập nhật thông tin ngày và giờ đã chọn
+    document.getElementById('selectedDateInput').value = selectedDate;
+
+  }
+
+  function screenFunction(screen) {
+    selectedScreen = screen;
+    updateSelectedScreen(); // Cập nhật thông tin màn hình đã chọn
+    document.getElementById('selectedScreenInput').value = selectedScreen;
+
+  }
+
+  function updateSelectedDateTime() {
+    // Cập nhật thông tin giờ đã chọn
+    var selectedTimeElement = document.getElementById('selected-time');
+    selectedTimeElement.textContent = "Selected Time: " + selectedTime;
+
+    // Nếu chưa có màn hình được chọn thì lấy màn hình đầu tiên trong danh sách
+    if (selectedScreen === "") {
+      var firstScreen = document.querySelector('.screens');
+      if (firstScreen) {
+        selectedScreen = firstScreen.textContent.trim();
+        updateSelectedScreen(); // Cập nhật thông tin màn hình đã chọn
+      }
+    }
+    
+        document.getElementById('selectedTimeInput').value = selectedTime;
+        document.getElementById('selectedDateInput').value = selectedDate;
+
+  }
+
+  function updateSelectedScreen() {
+    // Cập nhật thông tin màn hình đã chọn
+    var selectedScreenElement = document.getElementById('selected-screen');
+    selectedScreenElement.textContent = "Selected Screen: " + selectedScreen;
+  }
+
+  // Gọi hàm cập nhật thông tin ban đầu khi trang được load
+  updateSelectedDateTime();
+</script>
+<script>
+  
+  function goToSeatSelection() {
+        // Submit the form when the "Continue Booking" button is clicked
+        document.querySelector('form').submit();
+    }
+</script>
+
+
+
+
+  
+  
+  
+  
 </body>
 </html>

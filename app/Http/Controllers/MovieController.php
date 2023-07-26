@@ -5,6 +5,8 @@ use App\Models\Movie;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 class MovieController extends Controller
 {
     public function ShowMovie()
@@ -129,4 +131,28 @@ class MovieController extends Controller
             }         
         }       
     }
+
+
+    public function showtimes($movieId)
+{
+    $movie = DB::table('movies')->find($movieId);
+    $showtimes = DB::table('showtimes')->where('movie_id', $movieId)->get();
+
+    return view('movies.showtimes', compact('movie', 'showtimes'));
 }
+
+
+//Search
+public function search(Request $request)
+    {
+        // Get the search keyword from the form submission
+        $searchKeyword = $request->input('search');
+
+        // Perform the search in the database based on the movie title
+        $movies = Movie::where('title', 'LIKE', '%' . $searchKeyword . '%')->get();
+
+        // Pass the search results to the view
+        return view('search_results', compact('movies'));
+    }
+}
+

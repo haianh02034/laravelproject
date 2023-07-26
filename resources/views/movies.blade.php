@@ -439,20 +439,6 @@ $movies = DB::table('movies')->get();
 							</div>
 						
 							<!-- modal end -->
-<!-- Đoạn mã JavaScript -->
-{{-- <script>
-	function redirectToTicketBooking(title) {
-		window.location.href = "{{ route('ticket-booking') }}" + "?movie_title=" + encodeURIComponent(title);
-	}
-
-	const bookButtons = document.querySelectorAll('.book-btn');
-	bookButtons.forEach((button) => {
-		button.addEventListener('click', (event) => {
-			const movieTitle = event.currentTarget.getAttribute('data-title');
-			redirectToTicketBooking(movieTitle);
-		});
-	});
-</script> --}}
 
 
 						</div>

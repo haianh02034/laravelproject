@@ -5,36 +5,26 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Booking;
 use App\Models\Movie;
-
+use Illuminate\Support\Facades\DB;
 class BookingController extends Controller
 {
     //
+ 
     public function index(Request $request)
     {
-        // Get the selected movie ID from the query parameter
         $movieId = $request->input('movie_id');
-
-        // Retrieve the movie details based on the movie ID from the database
-        $movie = Movie::find($movieId);
-
-        // Pass the movie title to the ticket-booking view
-        return view('ticket-booking', ['movie' => $movie]);
-        return view('seat_sel', ['movie' => $movie]);
-
-
+        $showtimeId = $request->input('showtime_id');
+    
+        $movie = DB::table('movies')->find($movieId);
+        $showtime = DB::table('showtimes')->find($showtimeId);
+    
+        return view('ticket-booking', compact('movie', 'showtime'));
     }
+    
 
-    public function seatSelection(Request $request)
-    {
-        $movieId = $request->input('movie_id');
-
-        // Retrieve the movie details based on the movie ID from the database
-        $movie = Movie::find($movieId);
-
-        // Pass the movie title to the ticket-booking view
-        return view('seat_sel', ['movie' => $movie]);
-
-    }
-
+ 
+      
+    
+    
     
 }
