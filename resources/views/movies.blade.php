@@ -304,91 +304,30 @@
 				</div>
 				<div class="w3l-populohny-grids">
 
-{{-- hienthiphim --}}
-
-					<div class="item vhny-grid">
-						<div class="box16 mb-0">
-							<figure>
-								<img class="img-fluid" src="assets/images/commando3.png" alt="">
-							</figure>
-							<a href=".Commando3" data-toggle="modal">
-								<div class="box-content">
-									<h3 class="title">Commando-3</h3>
-									<h4> <span class="post"><span class="fa fa-clock-o"> </span> 1 Hr 40min
-
-										</span>
-
-										<span class="post fa fa-heart text-right"></span>
-									</h4>
-								</div>
-							</a>
-							<!-- Modal -->
-							<div class="modal fade Commando3" id="myModal" tabindex="-1" role="dialog"
-								aria-hidden="true">
-								<div class="modal-dialog" role="document">
-									<div class="modal-content" id="mymodalcontent">
-										<div class="modal-header">
-											<h4 class="modal-title" id="exampleModalLongTitle">DETAILS</h4>
-											<button type="button" class="closebtn" data-dismiss="modal"
-												aria-label="Close">
-												<span aria-hidden="true">&times;</span>
-											</button>
-										</div>
-										<div class="modal-body" id="dynamic-content">
-											<img src="assets/images/commando3.png" class="img-fluid modalimg" alt="" />
-											<p>
-												<h3>Release Date&nbsp;:29 November 2019</h3>
-												<h3>Venue&nbsp;:Cg Road </h3>
-											</p>
-											<h4>About Movie</h4>
-											<p>
-												Commando 3 is a 2019 Indian Hindi-language action thriller film directed
-												by Aditya Datt and produced by Vipul Amrutlal Shah, Reliance
-												Entertainment.The film is the sequel of Commando: A One Man Army
-												(2013) and Commando 2: The Black Money Trail (2017). The third
-												installment of Commando film series, the film features Vidyut Jammwal,
-												Adah Sharma, and Angira Dhar in lead roles, with Gulshan Devaiah
-												portraying the antagonist.Jammwal reprises his role as
-												the commando Karan, who goes undercover with encounter specialist
-												Bhavana Reddy for an anti-terrorist mission in London.
-											</p>
-											<h4>Star Cast</h4>
-											<p>
-												Vidyut Jammwal as Commando Karanveer Singh Dogra (Karan)<br />
-												Adah Sharma as Inspector Bhavna Reddy<br />
-												Angira Dhar as British Intelligence Agent Mallika Sood<br />
-												Gulshan Devaiah as Buraq Ansari<br />
-											</p>
-										</div>
-										<div class="bookbtn">
-											<button type="button" class="btn btn-success"
-												onclick="location.href='ticket-booking.html';">Book</button>
-										</div>
-									</div>
-								</div>
-							</div>
-							<!-- modal end -->
-						</div>
-					</div>
 
 
+{{-- Hien thi film da add --}}
 
-{{-- add film --}}
 @php
-$movies = DB::table('movies')->get();
+$movie = DB::table('movies')->get();
 @endphp
-@foreach($movies as $key => $movie)
+@foreach($movie as $key => $movies)
+
+@if (isset($movies->id))
+
+					
+
 					<div class="item vhny-grid">
 						
 						
 						<div class="box16 mb-0">
 							<figure>
-								<img src="{{ asset('/images/movie/' . $movie->movie_photo) }}" alt="Ảnh phim">
+								<img src="{{ asset('/images/movie/' . $movies->movie_photo) }}" alt="Ảnh phim">
 							</figure>
 							<a href=".Knivesout" data-toggle="modal">
 								<div class="box-content">
-									<h3 class="title">{{ $movie->title }}</h3>
-									<h4> <span class="post"><span class="fa fa-clock-o"> </span>{{ $movie->time }}</span>
+									<h3 class="title">{{ $movies->title }}</h3>
+									<h4> <span class="post"><span class="fa fa-clock-o"> </span> {{ $movies->time }}</span>
 
 										<span class="post fa fa-heart text-right"></span>
 									</h4>
@@ -400,39 +339,34 @@ $movies = DB::table('movies')->get();
 								<div class="modal-dialog" role="document">
 									<div class="modal-content" id="mymodalcontent">
 										<div class="modal-header">
-											<h4 class="modal-title" id="exampleModalLongTitle">DETAILS</h4>
+											<h4 class="modal-title" id="exampleModalLongTitle">{{ $movies->title }}</h4>
 											<button type="button" class="closebtn" data-dismiss="modal"
 												aria-label="Close">
 												<span aria-hidden="true">&times;</span>
 											</button>
 										</div>
 										<div class="modal-body" id="dynamic-content">
-											<img src="assets/images/m3.jpg" class="img-fluid modalimg" alt="" />
+											<img src="{{ asset('/images/movie/' . $movies->movie_photo) }}" class="img-fluid modalimg" alt="" />
+											
+											<h4>Release Year: {{ $movies->release_year }} </h3>
+											<h4>Category: {{ $movies->category }}</h4>
 											<p>
-												<h3>Release Date&nbsp;:September 7, 2019 </h3>
-												<h3>Venue&nbsp;:Cg Road </h3>
+												
 											</p>
-											<h4>About Movie</h4>
+											<h4>Producer: {{ $movies->producer }} </h3>
+											<h4>Star Cast: {{ $movies->performer }}</h4>
 											<p>
-												Knives Out is a 2019 American mystery film written and directed by Rian
-												Johnson, and produced by Johnson and Ram Bergman. It follows a master
-												detective investigating the death of the patriarch of a wealthy,
-												dysfunctional family. The film features an ensemble cast including
-												Daniel Craig, Chris Evans, Ana de Armas, Jamie Lee Curtis, Michael
-												Shannon, Don Johnson, Toni Collette, Lakeith Stanfield, Katherine
-												Langford, Jaeden Martell, and Christopher Plummer.
+												
 											</p>
-											<h4>Star Cast</h4>
+											<h4>Time: {{ $movies->time }}</h4>
 											<p>
-												Daniel Craig as Benoit Blanc<br />
-												Chris Evans as Hugh "Ransom" Drysdale<br />
-												Ana de Armas as Marta Cabrera<br />
-												Jamie Lee Curtis as Linda Drysdale<br />
-												Michael Shannon as Walt Thrombey
+												
 											</p>
+										
+											
 										</div>
 										<div class="bookbtn">
-											<a href="{{ route('ticket-booking', ['movie_id' => $movie->id]) }}" class="btn btn-success book-btn">Book</a>
+											<a href="{{ route('ticket-booking', ['movie_id' => $movies->id]) }}" class="btn btn-success book-btn">Book</a>
 										</div>
 									</div>
 								</div>
@@ -442,155 +376,12 @@ $movies = DB::table('movies')->get();
 
 
 						</div>
-						
+@endif
 					</div>
-					@endforeach
+@endforeach
 				</div>
 				
-			
-		
-		
-		
-					
-					{{-- end add film --}}
-					{{-- <div class="item vhny-grid">
-						<div class="box16 mb-0">
-							<figure>
-								<img class="img-fluid" src="assets/images/bharat1.png" alt="">
-							</figure>
-							<a href=".Bharat" data-toggle="modal">
-								<div class="box-content">
-									<h3 class="title">Bharat</h3>
-									<h4> <span class="post"><span class="fa fa-clock-o"> </span> 2 Hr 35min
-
-										</span>
-
-										<span class="post fa fa-heart text-right"></span>
-									</h4>
-								</div>
-							</a>
-							<!-- Modal -->
-							<div class="modal fade Bharat" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
-								<div class="modal-dialog" role="document">
-									<div class="modal-content" id="mymodalcontent">
-										<div class="modal-header">
-											<h4 class="modal-title" id="exampleModalLongTitle">DETAILS</h4>
-											<button type="button" class="closebtn" data-dismiss="modal"
-												aria-label="Close">
-												<span aria-hidden="true">&times;</span>
-											</button>
-										</div>
-										<div class="modal-body" id="dynamic-content">
-											<img src="assets/images/bharat1.png" class="img-fluid modalimg" alt="" />
-											<p>
-												<h3>Release Date&nbsp;:5 June 2019 </h3>
-												<h3>Venue&nbsp;:Cg Road </h3>
-											</p>
-											<h4>About Movie</h4>
-											<p>
-												Bharat is a 2019 Indian Hindi-language drama film written and directed
-												by Ali Abbas Zafar. It is jointly produced by Atul Agnihotri, Alvira
-												Khan Agnihotri, Bhushan Kumar, Krishan Kumar, Nikhil Namit and Salman
-												Khan under the banners Reel Life Productions, Salman Khan Films and
-												T-Series. The film stars Salman Khan, Katrina Kaif, Sunil Grover, Disha
-												Patani and Jackie Shroff. Tabu makes a friendly appearance. It traces
-												India's post-independence history from the perspective of a common man,
-												and follows his life from the age of 8 to 70.
-											</p>
-											<h4>Star Cast</h4>
-											<p>
-												Salman Khan as Bharat Kumar<br />
-												Katrina Kaif as Kumud Raina Kumar<br />
-												Disha Patani as Radha Mathur<br />
-												Sunil Grover as Vilayti Khan<br />
-												Jackie Shroff as Gautam Kumar
-											</p>
-										</div>
-										<div class="bookbtn">
-											<button type="button" class="btn btn-success"
-												onclick="location.href='ticket-booking.html';">Book</button>
-										</div>
-									</div>
-								</div>
-							</div>
-							<!-- modal end -->
-						</div>
-					</div> --}}
-					{{-- <div class="item vhny-grid">
-						<div class="box16 mb-0">
-							<figure>
-								<img class="img-fluid" src="assets/images/m5.jpg" alt="">
-							</figure>
-							<a href=".Jumanji" data-toggle="modal">
-								<div class="box-content">
-									<h3 class="title">Jumanji : The Next Level</h3>
-									<h4> <span class="post"><span class="fa fa-clock-o"> </span> 2 Hr 3min
-
-										</span>
-
-										<span class="post fa fa-heart text-right"></span>
-									</h4>
-								</div>
-							</a>
-							<!-- Modal -->
-							<div class="modal fade Jumanji" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
-								<div class="modal-dialog" role="document">
-									<div class="modal-content" id="mymodalcontent">
-										<div class="modal-header">
-											<h4 class="modal-title" id="exampleModalLongTitle">DETAILS</h4>
-											<button type="button" class="closebtn" data-dismiss="modal"
-												aria-label="Close">
-												<span aria-hidden="true">&times;</span>
-											</button>
-										</div>
-										<div class="modal-body" id="dynamic-content">
-											<img src="assets/images/m5.jpg" class="img-fluid modalimg" alt="" />
-											<p>
-												<h3>Release Date&nbsp;:December 13, 2019 </h3>
-												<h3>Venue&nbsp;:Cg Road </h3>
-											</p>
-											<h4>About Movie</h4>
-											<p>
-												Jumanji: The Next Level is a 2019 American fantasy adventure comedy film
-												directed by Jake Kasdan and co-written by Kasdan, Jeff Pinkner, and
-												Scott Rosenberg. It is a sequel to 2017's Jumanji: Welcome to the
-												Jungle, the second follow-up to 1995's Jumanji, and is the fourth
-												installment in the Jumanji franchise. It stars Dwayne Johnson, Jack
-												Black, Kevin Hart, Karen Gillan, Nick Jonas, Alex Wolff, Morgan Turner,
-												Ser'Darius Blain, and Madison Iseman reprising their roles from the
-												previous film while Awkwafina, Rory McCann, Danny Glover, and Danny
-												DeVito also join the cast. The film's plot takes place two years after
-												Welcome to the Jungle, in which the same group of teenagers, along with
-												an old friend and two unwitting additions, become trapped in Jumanji.
-												There, they all find themselves facing new problems and challenges with
-												both old and new avatars while having to save the land from a new
-												villain in order to escape.
-											</p>
-											<h4>Star Cast</h4>
-											<p>
-												Dwayne Johnson as Dr. Xander "Smolder" Bravestone<br />
-												Jack Black as Professor Sheldon "Shelly" Oberon<br />
-												Kevin Hart as Franklin "Mouse" Finbar<br />
-												Karen Gillan as Ruby Roundhouse<br />
-												Nick Jonas as Jefferson "Seaplane" McDonough
-											</p>
-										</div>
-										<div class="bookbtn">
-											<button type="button" class="btn btn-success"
-												onclick="location.href='ticket-booking.html';">Book</button>
-										</div>
-									</div>
-								</div>
-							</div>
-							<!-- modal end -->
-
-						</div>
-					</div> --}}
-				{{-- </div> --}}
-				<!-- ***********************************Adults Section ************************************** -->
 	
-
-
 				<div class="w3l-title-grids">
 					<div class="headerhny-left">
 						<h3 class="hny-title">Adults</h3>

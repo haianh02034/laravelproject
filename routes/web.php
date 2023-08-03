@@ -45,6 +45,10 @@ Route::get('/e-ticket.html', function () {
 Route::get('/display_selection.html', function () {
     return view('display_selection');
 });
+
+
+// =======================================================================================================
+
 Route::get('/admin/dashboard', function () {
     return view('admin.dashboard');
 });
@@ -61,15 +65,27 @@ Route::get('payment.html',function(){
     return view('payment');
 });
 
+
 Route::get('/admin/users', [AdminController::class, 'ShowUser'])->name('ShowUser');
 Route::post('/admin/users', 'AdminController@users')->name('admin.users');
+
+Route::get('/user/delete/{id}', [AdminController::class, 'destroy'])->name('users.destroy');
+Route::get('/user/edit/{id}', [AdminController::class, 'edit'])->name('users.edit');
+Route::post('/user/update/{id}', [AdminController::class, 'update'])->name('users.update');
+
 Route::get('/admin/movies', function () {
     return view('admin.movies');
 })->name('admin.movies');
+
 Route::get('/admin/movieadd', [MovieController::class, 'add'])->name('add');
 Route::post('/admin/movieadd', [MovieController::class, 'store'])->name('admin.movies.store');
 
 Route::get('/movie/delete/{id}', [MovieController::class, 'destroy'])->name('movies.destroy');
+Route::get('/movie/edit/{id}', [MovieController::class, 'edit'])->name('movies.edit');
+Route::post('/movie/update/{id}', [MovieController::class, 'update'])->name('movies.update');
+Route::get('/movie/show/{id}', [MovieController::class, 'show'])->name('movies.show');
+
+
 Route::get('/admin/useradd', function () {
     return view('admin.useradd');
 });

@@ -57,7 +57,7 @@
                               </svg>
                           </a>
                           <ul id="people" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                            <li class="active">
+                            <li class="">
                                           <a href="{{ url('admin/users') }}">
                                               <i class="las la-minus"></i><span>Users</span>
                                           </a>
@@ -70,8 +70,31 @@
                           </ul>
                       </li>
                       <li class=" ">
+                          <a href="#category" class="collapsed" data-toggle="collapse" aria-expanded="false">
+                              <svg class="svg-icon" id="p-dash3" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                              </svg>
+                              <span class="ml-4">Movies</span>
+                              <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                  <polyline points="10 15 15 20 20 15"></polyline><path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
+                              </svg>
+                          </a>
+                          <ul id="category" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                                  <li class="active">
+                                          <a href="{{ url('admin/movies') }}">
+                                              <i class="las la-minus"></i><span>List Movies</span>
+                                          </a>
+                                  </li>
+                                  <li class="">
+                                          <a href="{{ url('admin/movieadd') }}">
+                                              <i class="las la-minus"></i><span>Add Movie</span>
+                                          </a>
+                                  </li>
+                          </ul>
+                      </li>
+                      <li class=" ">
                           <a href="#product" class="collapsed" data-toggle="collapse" aria-expanded="false">
-                              <svg class="svg-icon" id="th-dash2" width="20" height="20"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle>
+                              <svg class="svg-icon" id="p-dash2" width="20" height="20"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle>
                                   <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
                               </svg>
                               <span class="ml-4">Orders</span>
@@ -90,75 +113,6 @@
                                       <i class="las la-minus"></i><span>Add Order</span>
                                   </a>
                               </li>
-                          </ul>
-                      </li>
-                      <li class=" ">
-                          <a href="#category" class="collapsed" data-toggle="collapse" aria-expanded="false">
-                              <svg class="svg-icon" id="th-dash3" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                              </svg>
-                              <span class="ml-4">Movies</span>
-                              <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                  <polyline points="10 15 15 20 20 15"></polyline><path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
-                              </svg>
-                          </a>
-                          <ul id="category" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                                  <li class="">
-                                          <a href="{{ url('admin/movies') }}">
-                                              <i class="las la-minus"></i><span>List Movies</span>
-                                          </a>
-                                  </li>
-                                  <li class="">
-                                          <a href="{{ url('admin/movieadd') }}">
-                                              <i class="las la-minus"></i><span>Add Movies</span>
-                                          </a>
-                                  </li>
-                          </ul>
-                      </li>
-                      <li class=" ">
-                          <a href="#sale" class="collapsed" data-toggle="collapse" aria-expanded="false">
-                              <svg class="svg-icon" id="th-dash4" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                  <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path>
-                              </svg>
-                              <span class="ml-4">Types</span>
-                              <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                  <polyline points="10 15 15 20 20 15"></polyline><path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
-                              </svg>
-                          </a>
-                          <ul id="sale" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                                  <li class="">
-                                          <a href="">
-                                              <i class="las la-minus"></i><span>List Types</span>
-                                          </a>
-                                  </li>
-                                  <li class="">
-                                          <a href="">
-                                              <i class="las la-minus"></i><span>Add Type</span>
-                                          </a>
-                                  </li>
-                          </ul>
-                      </li>
-                      <li class=" ">
-                          <a href="#purchase" class="collapsed" data-toggle="collapse" aria-expanded="false">
-                              <svg class="svg-icon" id="th-dash5" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
-                                  <line x1="1" y1="10" x2="23" y2="10"></line>
-                              </svg>
-                              <span class="ml-4">Services</span>
-                              <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                  <polyline points="10 15 15 20 20 15"></polyline><path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
-                              </svg>
-                          </a>
-                          <ul id="purchase" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                                  <li class="">
-                                          <a href="">
-                                              <i class="las la-minus"></i><span>List Services</span>
-                                          </a>
-                                  </li>
-                                  <li class="">
-                                          <a href="">
-                                              <i class="las la-minus"></i><span>Add Service</span>
-                                          </a>
-                                  </li>
                           </ul>
                       </li>
                   </ul>
@@ -249,7 +203,8 @@
                                                       class="rounded profile-img img-fluid avatar-70">
                                               </div>
                                               <div class="th-3">
-                                                  <h5 class="mb-1"> Admin </h5>
+                                                    <h5 class="mb-1">  Admin </h5>
+                                                    <p class="mb-0"></p>
                                                   <div class="d-flex align-items-center justify-content-center mt-3">
                                                       <a href="" class="btn border mr-2">Profile</a>
                                                       <a  href="{{asset('logout')}}" class="btn border">Sign Out</a>
@@ -314,12 +269,16 @@
                             <th>{{ $movies->National_production }}</th>
                             <th>{{ $movies->time }}</th>
                             
-                            <th><img src="{{ asset('/images/movie/' . $movies->movie_photo) }}" alt="Ảnh phim" style="max-width: 100px; max-height: 150px;"></th>
+                            <th><img src="{{ asset('/images/movie/' . $movies->movie_photo) }}" alt="movie_photo" style="max-width: 100px; max-height: 150px;"></th>
                             <th>
                                 <div class="d-flex align-items-center list-action">
                                 <a class="badge bg-success mr-2" data-toggle="tooltip" data-placement="top" title="Edit" 
                                     href="{{ route('movies.edit',$movies->id) }}"><i class="ri-pencil-line mr-0"></i>
+<<<<<<< HEAD
+                                    </a> 
+=======
                                     </a>
+>>>>>>> 85f303717a9dc15a7100e25d2fb967a217443c68
 
                                         <a class="badge bg-warning mr-2" data-toggle="tooltip" data-placement="top" title="Delete"
                                     href="{{ route('movies.destroy',$movies->id) }}"><i class="ri-delete-bin-line mr-0"></i></a>
@@ -385,7 +344,7 @@
                             </ul>
                         </div>
                         <div class="col-lg-6 text-right">
-                            <span class="mr-1"><script>document.write(new Date().getFullYear())</script>©</span> <a href="#" class="">SDN Hotel</a>.
+                            <span class="mr-1"><script>document.write(new Date().getFullYear())</script>©</span> <a href="#" class="">Cinema A</a>.
                         </div>
                     </div>
                 </div>

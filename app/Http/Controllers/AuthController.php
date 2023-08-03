@@ -55,7 +55,7 @@ class AuthController extends Controller
         $validatedData = $request->validate([
             'sign-up-name' => 'required',
             'sign-up-email' => 'required|email|unique:users,email',  
-            'sign-up-passwd' => 'required|min:6',            
+            'sign-up-passwd' => 'required|min:8',            
         ], [
             'sign-up-email.unique' => 'The email has already been taken.',        
         ]);
