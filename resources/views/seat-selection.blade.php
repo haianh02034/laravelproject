@@ -124,7 +124,11 @@
 										<li><a href="movies.html">Action</a></li>
 										<li><a href="movies.html">Drama</a></li>
 										<li><a href="movies.html">Family</a></li>
-										
+										<li><a href="movies.html">Thriller</a></li>
+										<li><a href="movies.html">Commedy</a></li>
+										<li><a href="movies.html">Romantic</a></li>
+										<li><a href="movies.html">Tv-Series</a></li>
+										<li><a href="movies.html">Horror</a></li>
                                         
 									</ul>
 								</div>
