@@ -88,7 +88,7 @@
 									</a>
 									<ul class="dropdown-menu">
 										<li><a href="{{ asset('profile') }}">Account information</a></li>
-										<li><a href="{{ asset('logout') }}">Logout</a></li>
+										<li><a href="{{ asset('logout') }}">Logcheckout</a></li>
 									</ul>
 								</li>
 							@else
@@ -129,6 +129,7 @@
 										<li><a href="movies.html">Romantic</a></li>
 										<li><a href="movies.html">Tv-Series</a></li>
 										<li><a href="movies.html">Horror</a></li>
+                                        
 									</ul>
 								</div>
 							</div>
@@ -172,6 +173,7 @@
                   <li id="step4" class="not_active">E-Ticket</li>
                 </ul> -->
                 <br>
+                
     <fieldset>
 <form>
         <div  style="  box-shadow: 0 14px 12px 0 var(--theme-border), 0 10px 50px 0 var(--theme-border); width: 800px; height: 550px; display: block; margin-left: auto; margin-right: auto;">
