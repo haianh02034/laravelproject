@@ -84,7 +84,10 @@
 										<li><a href="movies.html">Tv-Series</a></li>
 										<li><a href="movies.html">Horror</a></li>
 										<li><a href="movies.html">Action</a></li>
-										
+										<li><a href="movies.html">Action</a></li>
+										<li><a href="movies.html">Drama</a></li>
+										<li><a href="movies.html">Family</a></li>
+										<li><a href="movies.html">Thriller</a></li>
 									</ul>
 								</div>
 							</div>
