@@ -79,22 +79,13 @@
 								{{-- <div class="browse-items">
 									<h3 class="hny-title two mt-md-5 mt-4">Browse all:</h3>
 									<ul class="search-items">
-										<li><a href="movies.html">Action</a></li>
+                    <li><a href="movies.html">Action</a></li>
 										<li><a href="movies.html">Drama</a></li>
 										<li><a href="movies.html">Family</a></li>
 										<li><a href="movies.html">Thriller</a></li>
 										<li><a href="movies.html">Commedy</a></li>
-										<li><a href="movies.html">Romantic</a></li>
-										<li><a href="movies.html">Tv-Series</a></li>
-										<li><a href="movies.html">Horror</a></li>
-										<li><a href="movies.html">Action</a></li>
-										<li><a href="movies.html">Drama</a></li>
-										<li><a href="movies.html">Family</a></li>
-										<li><a href="movies.html">Thriller</a></li>
-										<li><a href="movies.html">Commedy</a></li>
-										<li><a href="movies.html">Romantic</a></li>
-										<li><a href="movies.html">Tv-Series</a></li>
-										<li><a href="movies.html">Horror</a></li>
+										
+										
 									</ul>
 								</div>
 							</div>
