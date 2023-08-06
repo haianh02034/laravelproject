@@ -84,7 +84,10 @@
 										<li><a href="movies.html">Family</a></li>
 										<li><a href="movies.html">Thriller</a></li>
 										<li><a href="movies.html">Commedy</a></li>
-										
+										<li><a href="movies.html">Romantic</a></li>
+										<li><a href="movies.html">Tv-Series</a></li>
+										<li><a href="movies.html">Horror</a></li>
+										<li><a href="movies.html">Action</a></li>
 										
 									</ul>
 								</div>
@@ -104,9 +107,7 @@
 						<div class="theme-switch-wrapper">
 							<label class="theme-switch" for="checkbox">
 								<input type="checkbox" id="checkbox">
-								<div class="mode-container">
-									<i class="gg-sun"></i>
-									<i class="gg-moon"></i>
+								
 								</div>
 							</label>
 						</div>
