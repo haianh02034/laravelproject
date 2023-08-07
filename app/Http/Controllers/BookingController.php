@@ -8,7 +8,7 @@ use App\Models\Movie;
 use Illuminate\Support\Facades\DB;
 class BookingController extends Controller
 {
-    //
+    //lấy giữ liệu của các bảng movies hiện thị ra trang ticket-booking//
  
     public function index(Request $request)
     {
